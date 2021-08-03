@@ -21,6 +21,10 @@ const Login = ({ setCurrentUser }) => {
 
     const signIn = (e) => {
         e.preventDefault()
+        if(!email || !password){
+            alert('both fields are required')
+            return
+        }
         for(let i = 0; i < users.length; i++){
             if(users[i].email === email){
                 if(users[i].password === password){

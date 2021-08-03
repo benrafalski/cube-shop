@@ -24,41 +24,39 @@ const Register = () => {
     }, [])
 
     const addUser = async () => {
-        const res = await axios.post('/users', { email: email, password: password })
+        const res = await axios.post('/users', { email: email, username: username, firstname: firstname, lastname: lastname, password: password})
     }
 
 
-    const signIn = (e) => {
+    const register = (e) => {
         e.preventDefault()
         for(let i = 0; i < users.length; i++){
-            /* if(users[i].email === email){
-                if(users[i].password === password){
-                    //setCurrentUser(users[i])
-                    console.log('Signed in successfully')
-                    history.push('/')
-                    return
-                }else{
-                    alert('incorrect password...try again')
-                    return
-                }
-            } */
+            if(!username || !email || !firstname || !lastname || !password || !passwordVerify){
+                alert(`one (or more) required field(s) missing`)
+                return
+            }
             if(users[i].email === email){
                 alert(`email:${email} is already in use by another account`)
+                return
             }
             if(users[i].username === username){
                 alert(`username:${username} is already in use by another account`)
+                return
             }
             if(password.length < 6){
                 alert(`password must be at least 6 characters long`)
+                return
             }
             if(password !== passwordVerify){
                 alert(`passwords do not match!`)
+                return
             }
         }
-       // history.push('/login')
+        addUser()
+        history.push('/login')
     }
 
-    const register = (e) => {
+    const signIn = (e) => {
         e.preventDefault()
         history.push('/login')
     }
@@ -116,7 +114,7 @@ const Register = () => {
                     <button
                         className='register__signin--btn'
                         type='submit'
-                        onClick={signIn} 
+                        onClick={register} 
                     >
                         <span>Create new account</span>
                     </button>
