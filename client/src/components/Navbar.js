@@ -5,7 +5,10 @@ const Navbar = () => {
     return (
         <nav class="navbar">
             <div class="navbar__container">
-                <a href="#home" id="navbar__logo">CUBEsTOR</a>
+                <Link to='/' style={{ textDecoration:'none' }}>
+                    <span className='navbar__logo'>CUBEsTOR</span>
+                </Link>
+                {/* <a href="#home" id="navbar__logo">CUBEsTOR</a> */}
                 <div class="navbar__toggle" id="mobile-menu">
                     <span class="bar"></span>
                     <span class="bar"></span>

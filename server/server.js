@@ -1,6 +1,8 @@
 const express = require('express')
 const mongoose = require('mongoose')
 
+const Users = require('./models/User.js')
+
 const app = express()
 const port = process.env.PORT || 8000
 
@@ -35,6 +37,26 @@ db.on('error', () => {
 // routes
 app.get('/', (req, res) => {
     res.status(200).send('cube shop is open!')
+})
+
+// GET - all users
+app.get('/users', (req, res) => {
+    Users.find((err, data) => {
+        err 
+            ? res.status(500).send(err)
+            : res.status(200).send(data)
+    })
+})
+
+// POST - new user
+app.post('/users', (req, res) => {
+    const dbUser = req.body;
+    
+    Users.create(dbUser, (err, data) => {
+        err
+            ? res.status(500).send(err)
+            : res.status(201).send(data)
+    })
 })
 
 // listener

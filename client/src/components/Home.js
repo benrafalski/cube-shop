@@ -7,7 +7,7 @@ const Home = () => {
             {/* Hero section */}
             <div className="hero" id="home">
                 <div className="hero__container">
-                    <h1 className="hero__heading">Choose your <span>cubes</span></h1>
+                    <h1 className="hero__heading">Choose your <span>puzzles</span></h1>
                     <p className="hero__description">View our store today</p>
                     <button className="main__btn">{/* <a href="#">Explore</a> */}
                         <Link to='/products'>
@@ -93,7 +93,7 @@ const Home = () => {
                         <h2>Sign Up Today</h2>
                         <p>See what makes us the best</p>
                         <button className="main__btn">{/* <a href="#">Sign Up</a> */}
-                            <Link to='/login' style={{ textDecoration:'none', color:'#fff' }}>
+                            <Link to='/register' style={{ textDecoration:'none', color:'#fff' }}>
                                 <span>Sign Up</span>
                             </Link>
                         </button>
