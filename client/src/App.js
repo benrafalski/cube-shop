@@ -6,6 +6,7 @@ import Home from './components/Home';
 import Login from './components/Login';
 import { useEffect, useState } from 'react';
 import { useStateValue } from './StateProvider'
+import Register from './components/Register';
 
 function App() {
   const [currentUser, setCurrentUser] = useState({})
@@ -34,7 +35,7 @@ function App() {
             <Login setCurrentUser={setCurrentUser}/>
           </Route>
           <Route path='/register'>
-
+            <Register/>
           </Route>
           <Route path='/'>
             <Navbar setCurrentUser={setCurrentUser}/>
