@@ -2,8 +2,16 @@ import '../styles.css'
 import StarTwoToneIcon from '@material-ui/icons/StarTwoTone'
 
 const Product = ({ id, title, price, rating, image, category }) => {
+
+    const viewItem = () => {
+        
+    }
+
     return (
-        <div className={category + ' product'}>
+        <div 
+            className={category + ' product'}
+            onClick={viewItem}
+        >
             <img src={image}/>
             <div className='product__info'>
                 <p>{title}</p>
@@ -19,7 +27,7 @@ const Product = ({ id, title, price, rating, image, category }) => {
                     ))}
                 </div>
             </div>
-            <button /* onClick={addToCart} */>Add to Cart</button>
+            <button /* onClick={addToCart} */>View Item</button>
         </div>
     )
 }

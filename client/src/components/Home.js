@@ -1,7 +1,7 @@
 import '../styles.css'
 import { Link } from 'react-router-dom'
 
-const Home = () => {
+const Home = ({ setCategory }) => {
     return (
         <div className='home'>
             {/* Hero section */}
@@ -42,7 +42,7 @@ const Home = () => {
                         <h2>3x3 Speed Cubes</h2>
                         <p>Quality Assured</p>
                         <div className="services__btn">
-                            <button>
+                            <button onClick={e => setCategory('speedcubes')}>
                                 <Link to='/products/speedcubes' style={{ textDecoration:'none', color:'#fff' }}>
                                     <span style={{ textDecoration:'none' }}>Shop Now</span>
                                 </Link>
@@ -53,8 +53,8 @@ const Home = () => {
                         <h2>WCA Puzzles</h2>
                         <p>2x2, Megaminx, Skewb</p>
                         <div className="services__btn">
-                            <button>
-                                <Link to='/products/wca' style={{ textDecoration:'none', color:'#fff' }}>
+                            <button onClick={e => setCategory('wca-puzzles')}>
+                                <Link to='/products/wca-puzzles' style={{ textDecoration:'none', color:'#fff' }}>
                                     <span style={{ textDecoration:'none' }}>Shop Now</span>
                                 </Link>
                             </button>
@@ -65,8 +65,8 @@ const Home = () => {
                         <p>Megaminx+</p>
                         
                         <div className="services__btn">
-                            <button>
-                                <Link to='/products/large' style={{ textDecoration:'none', color:'#fff' }}>
+                            <button onClick={e => setCategory('large-puzzles')}>
+                                <Link to='/products/large-puzzles' style={{ textDecoration:'none', color:'#fff' }}>
                                     <span style={{ textDecoration:'none' }}>Shop Now</span>
                                 </Link>
                             </button>
@@ -76,7 +76,7 @@ const Home = () => {
                         <h2>Cuboids</h2>
                         <p>Shape Mods</p>
                         <div className="services__btn">
-                            <button>
+                            <button onClick={e => setCategory('cuboid')}>
                                 <Link to='/products/cuboid' style={{ textDecoration:'none', color:'#fff' }}>
                                     <span style={{ textDecoration:'none' }}>Shop Now</span>
                                 </Link>

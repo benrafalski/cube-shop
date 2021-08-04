@@ -1088,6 +1088,7 @@
     z-index: 1;
 	border-radius: 4px;
 	transition: 0.3s ease-in;
+	color: #fff;
 }
 
 .speedcubes{
@@ -1145,6 +1146,7 @@
 .product__price {
 	text-align:center;
     margin-top: 5px;
+	/* color: #9518fc; */
 }
 
 .product__info {
@@ -1155,7 +1157,7 @@
 
 .product__rating {
     display: flex;
-    color: #111;
+    color: rgb(219, 219, 219);
 	display: flex;
 	justify-content: center;
 }
@@ -1234,6 +1236,7 @@
 	color: #fff;
 	text-decoration: none;
 }
+
 .categories__btn:after{
 	position: absolute;
 	content: '';
@@ -1249,18 +1252,23 @@
 .categories__speedcubes:after{
 	background: #38f9d7;
 }
+
 .categories__wca:after{
 	background: #fa71cd;
 }
+
 .categories__large:after{
 	background: #ff0844;
 }
+
 .categories__cuboid:after{
 	background: #30cfd0;
 }
+
 .categories__btn:hover{
 	color: #fff;
 }
+
 .categories__btn:hover:after{
 	width: 100%;
 }

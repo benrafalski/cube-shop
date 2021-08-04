@@ -9,9 +9,12 @@ import { useStateValue } from './StateProvider'
 import Register from './components/Register';
 import Products from './components/Products';
 import Categories from './components/Categories';
+import ViewItem from './components/ViewItem';
 
 function App() {
   const [currentUser, setCurrentUser] = useState({})
+  const [item, setItem] = useState({})
+  const [category, setCategory] = useState('')
   const [{}, dispatch] = useStateValue()
 
   useEffect(() => {
@@ -29,33 +32,32 @@ function App() {
     console.log(currentUser)
   }, [currentUser])
 
+  useEffect(() =>{
+    console.log(category)
+  }
+  , [category])
+
   return (
     <Router>
       <div className="app">
         <Switch>
-          <Route path='/products/cuboid'>
-            <Navbar/>
-            <Products page={'cuboid'}/>
+          <Route path={`/products/item/${item}`}>
+            <Navbar setCurrentUser={setCurrentUser} setCategory={setCategory}/>
+            <ViewItem 
+              id={item?.id}
+              title={item?.title}
+              price={item?.price}
+              rating={item?.rating}
+              image={item?.image}
+              category={item?.category}/>
             <Footer/>
           </Route>
-          <Route path='/products/large'>
-            <Navbar/>
-            <Products page={'large-puzzles'}/>
-            <Footer/>
-          </Route>
-          <Route path='/products/wca'>
-            <Navbar/>
-            <Products page={'wca-puzzles'}/>
-            <Footer/>
-          </Route>
-          <Route path='/products/speedcubes'>
-            <Navbar/>
-            <Products page={'speedcubes'}/>
-            <Footer/>
-          </Route>
-          <Route path='/products'>
-            <Navbar/>
-            <Categories/>
+          <Route path={`/products/${category}`}>
+            <Navbar setCurrentUser={setCurrentUser} setCategory={setCategory}/>
+            {category 
+              ? <Products page={category} setCategory={setCategory}/>
+              : <Categories setCategory={setCategory}/>
+            }   
             <Footer/>
           </Route>
           <Route path='/login'>
@@ -65,8 +67,8 @@ function App() {
             <Register/>
           </Route>
           <Route path='/'>
-            <Navbar setCurrentUser={setCurrentUser}/>
-            <Home/>
+            <Navbar setCurrentUser={setCurrentUser} setCategory={setCategory}/>
+            <Home setCategory={setCategory}/>
             <Footer/>
           </Route>
         </Switch>
