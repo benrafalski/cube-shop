@@ -43,7 +43,7 @@ const Home = () => {
                         <p>Quality Assured</p>
                         <div className="services__btn">
                             <button>
-                                <Link to='/products' style={{ textDecoration:'none', color:'#fff' }}>
+                                <Link to='/products/speedcubes' style={{ textDecoration:'none', color:'#fff' }}>
                                     <span style={{ textDecoration:'none' }}>Shop Now</span>
                                 </Link>
                             </button>
@@ -54,7 +54,7 @@ const Home = () => {
                         <p>2x2, Megaminx, Skewb</p>
                         <div className="services__btn">
                             <button>
-                                <Link to='/products' style={{ textDecoration:'none', color:'#fff' }}>
+                                <Link to='/products/wca' style={{ textDecoration:'none', color:'#fff' }}>
                                     <span style={{ textDecoration:'none' }}>Shop Now</span>
                                 </Link>
                             </button>
@@ -66,7 +66,7 @@ const Home = () => {
                         
                         <div className="services__btn">
                             <button>
-                                <Link to='/products' style={{ textDecoration:'none', color:'#fff' }}>
+                                <Link to='/products/large' style={{ textDecoration:'none', color:'#fff' }}>
                                     <span style={{ textDecoration:'none' }}>Shop Now</span>
                                 </Link>
                             </button>
@@ -77,7 +77,7 @@ const Home = () => {
                         <p>Shape Mods</p>
                         <div className="services__btn">
                             <button>
-                                <Link to='/products' style={{ textDecoration:'none', color:'#fff' }}>
+                                <Link to='/products/cuboid' style={{ textDecoration:'none', color:'#fff' }}>
                                     <span style={{ textDecoration:'none' }}>Shop Now</span>
                                 </Link>
                             </button>

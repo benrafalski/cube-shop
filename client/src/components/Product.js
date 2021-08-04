@@ -3,7 +3,7 @@ import StarTwoToneIcon from '@material-ui/icons/StarTwoTone'
 
 const Product = ({ id, title, price, rating, image, category }) => {
     return (
-        <div className='product'>
+        <div className={category + ' product'}>
             <img src={image}/>
             <div className='product__info'>
                 <p>{title}</p>

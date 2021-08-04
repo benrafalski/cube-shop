@@ -32,9 +32,29 @@ function App() {
     <Router>
       <div className="app">
         <Switch>
+          <Route path='/products/cuboid'>
+            <Navbar/>
+            <Products page={'cuboid'}/>
+            <Footer/>
+          </Route>
+          <Route path='/products/large'>
+            <Navbar/>
+            <Products page={'large-puzzles'}/>
+            <Footer/>
+          </Route>
+          <Route path='/products/wca'>
+            <Navbar/>
+            <Products page={'wca-puzzles'}/>
+            <Footer/>
+          </Route>
+          <Route path='/products/speedcubes'>
+            <Navbar/>
+            <Products page={'speedcubes'}/>
+            <Footer/>
+          </Route>
           <Route path='/products'>
             <Navbar/>
-            <Products/>
+            <Products page={'categories'}/>
             <Footer/>
           </Route>
           <Route path='/login'>
