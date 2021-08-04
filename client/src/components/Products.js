@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import '../styles.css'
 import Product from './Product'
 
@@ -5,7 +6,13 @@ const Products = () => {
     return (
         <div className='products'>
             <div className='products__container'>
-                <div className="products__background"></div>
+                <div className='products__btn--container'>
+                    <button className="products__btn">{/* <a href="#">Contact Us</a> */}
+                        <Link to='/products'>
+                            <span>Back to Categories</span>
+                        </Link>
+                    </button>
+                </div>
                 <div className='products__row'>
                     <Product
                         id='12345'

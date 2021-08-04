@@ -1,7 +1,7 @@
 import '../styles.css'
 import StarTwoToneIcon from '@material-ui/icons/StarTwoTone'
 
-const Product = ({ id, title, price, rating, image }) => {
+const Product = ({ id, title, price, rating, image, category }) => {
     return (
         <div className='product'>
             <img src={image}/>
