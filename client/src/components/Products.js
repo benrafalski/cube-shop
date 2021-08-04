@@ -6,14 +6,13 @@ const Products = ({ page }) => {
     return (
         <div className='products'>
             <div className='products__container'>
-                {(page !== 'categories') &&
                 <div className='products__btn--container'>
                     <button className="products__btn">{/* <a href="#">Contact Us</a> */}
                         <Link to='/products'>
-                            <span>Back to Categories</span>
+                            <span>View Categories</span>
                         </Link>
                     </button>
-                </div>}
+                </div>
                 {(page === 'speedcubes') &&
                 <div className='products__row'>
                     <Product

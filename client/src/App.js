@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 import { useStateValue } from './StateProvider'
 import Register from './components/Register';
 import Products from './components/Products';
+import Categories from './components/Categories';
 
 function App() {
   const [currentUser, setCurrentUser] = useState({})
@@ -54,7 +55,7 @@ function App() {
           </Route>
           <Route path='/products'>
             <Navbar/>
-            <Products page={'categories'}/>
+            <Categories/>
             <Footer/>
           </Route>
           <Route path='/login'>
