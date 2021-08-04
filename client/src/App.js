@@ -7,6 +7,7 @@ import Login from './components/Login';
 import { useEffect, useState } from 'react';
 import { useStateValue } from './StateProvider'
 import Register from './components/Register';
+import Products from './components/Products';
 
 function App() {
   const [currentUser, setCurrentUser] = useState({})
@@ -31,6 +32,11 @@ function App() {
     <Router>
       <div className="app">
         <Switch>
+          <Route path='/products'>
+            <Navbar/>
+            <Products/>
+            <Footer/>
+          </Route>
           <Route path='/login'>
             <Login setCurrentUser={setCurrentUser}/>
           </Route>
