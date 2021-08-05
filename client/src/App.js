@@ -34,28 +34,40 @@ function App() {
 
   useEffect(() =>{
     console.log(category)
-  }
-  , [category])
+  }, [category])
+
+  useEffect(() =>{
+    console.log(item)
+  }, [item])
 
   return (
     <Router>
       <div className="app">
         <Switch>
-          <Route path={`/products/item/${item}`}>
-            <Navbar setCurrentUser={setCurrentUser} setCategory={setCategory}/>
+          <Route path={`/products/item`}>
+            <Navbar 
+              setCurrentUser={setCurrentUser} 
+              setCategory={setCategory}/>
             <ViewItem 
               id={item?.id}
               title={item?.title}
               price={item?.price}
               rating={item?.rating}
               image={item?.image}
-              category={item?.category}/>
+              category={item?.category}
+            />
             <Footer/>
           </Route>
           <Route path={`/products/${category}`}>
-            <Navbar setCurrentUser={setCurrentUser} setCategory={setCategory}/>
+            <Navbar 
+              setCurrentUser={setCurrentUser} 
+              setCategory={setCategory}/>
             {category 
-              ? <Products page={category} setCategory={setCategory}/>
+              ? <Products 
+                  page={category} 
+                  setCategory={setCategory} 
+                  setItem={setItem}
+                />
               : <Categories setCategory={setCategory}/>
             }   
             <Footer/>
@@ -67,7 +79,10 @@ function App() {
             <Register/>
           </Route>
           <Route path='/'>
-            <Navbar setCurrentUser={setCurrentUser} setCategory={setCategory}/>
+            <Navbar 
+              setCurrentUser={setCurrentUser} 
+              setCategory={setCategory}
+            />
             <Home setCategory={setCategory}/>
             <Footer/>
           </Route>

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import '../styles.css'
 import Product from './Product'
 
-const Products = ({ page, setCategory }) => {
+const Products = ({ page, setCategory, setItem }) => {
     return (
         <div className='products'>
             <div className='products__container'>
@@ -22,6 +22,7 @@ const Products = ({ page, setCategory }) => {
                         rating={4}
                         image='https://m.media-amazon.com/images/I/51k6JSEUR3L._AC_SL1100_.jpg'
                         category={page}
+                        setItem={setItem}
                     />
                     <Product
                         id='12345'
@@ -30,6 +31,7 @@ const Products = ({ page, setCategory }) => {
                         rating={4}
                         image='https://m.media-amazon.com/images/I/51k6JSEUR3L._AC_SL1100_.jpg'
                         category={page}
+                        setItem={setItem}
                     />
                     <Product
                         id='12345'
@@ -38,6 +40,7 @@ const Products = ({ page, setCategory }) => {
                         rating={4}
                         image='https://m.media-amazon.com/images/I/51k6JSEUR3L._AC_SL1100_.jpg'
                         category={page}
+                        setItem={setItem}
                     />
                     <Product
                         id='12345'
@@ -46,6 +49,7 @@ const Products = ({ page, setCategory }) => {
                         rating={4}
                         image='https://m.media-amazon.com/images/I/51k6JSEUR3L._AC_SL1100_.jpg'
                         category={page}
+                        setItem={setItem}
                     />
                 </div>}
                 {(page === 'wca-puzzles') &&
@@ -57,6 +61,7 @@ const Products = ({ page, setCategory }) => {
                         rating={4}
                         image='https://m.media-amazon.com/images/I/61r0ytW-klL._AC_SL1500_.jpg'
                         category={page}
+                        setItem={setItem}
                     />
                     <Product
                         id='12345'
@@ -65,6 +70,7 @@ const Products = ({ page, setCategory }) => {
                         rating={4}
                         image='https://m.media-amazon.com/images/I/61r0ytW-klL._AC_SL1500_.jpg'
                         category={page}
+                        setItem={setItem}
                     />
                     <Product
                         id='12345'
@@ -73,6 +79,7 @@ const Products = ({ page, setCategory }) => {
                         rating={4}
                         image='https://m.media-amazon.com/images/I/61r0ytW-klL._AC_SL1500_.jpg'
                         category={page}
+                        setItem={setItem}
                     />
                     <Product
                         id='12345'
@@ -81,6 +88,7 @@ const Products = ({ page, setCategory }) => {
                         rating={4}
                         image='https://m.media-amazon.com/images/I/61r0ytW-klL._AC_SL1500_.jpg'
                         category={page}
+                        setItem={setItem}
                     />
                 </div>}
                 {(page === 'large-puzzles') &&
@@ -92,6 +100,7 @@ const Products = ({ page, setCategory }) => {
                         rating={4}
                         image='https://m.media-amazon.com/images/I/51ulm61ez3L._AC_SL1000_.jpg'
                         category={page}
+                        setItem={setItem}
                     />
                     <Product
                         id='12345'
@@ -100,6 +109,7 @@ const Products = ({ page, setCategory }) => {
                         rating={4}
                         image='https://m.media-amazon.com/images/I/51ulm61ez3L._AC_SL1000_.jpg'
                         category={page}
+                        setItem={setItem}
                     />
                     <Product
                         id='12345'
@@ -108,6 +118,7 @@ const Products = ({ page, setCategory }) => {
                         rating={4}
                         image='https://m.media-amazon.com/images/I/51ulm61ez3L._AC_SL1000_.jpg'
                         category={page}
+                        setItem={setItem}
                     />
                     <Product
                         id='12345'
@@ -116,6 +127,7 @@ const Products = ({ page, setCategory }) => {
                         rating={4}
                         image='https://m.media-amazon.com/images/I/51ulm61ez3L._AC_SL1000_.jpg'
                         category={page}
+                        setItem={setItem}
                     />
                 </div>}
                 {(page === 'cuboid') &&
@@ -127,6 +139,7 @@ const Products = ({ page, setCategory }) => {
                         rating={4}
                         image='https://m.media-amazon.com/images/I/51ahQnT3kaS._AC_SL1500_.jpg'
                         category={page}
+                        setItem={setItem}
                     />
                     <Product
                         id='12345'
@@ -135,6 +148,7 @@ const Products = ({ page, setCategory }) => {
                         rating={4}
                         image='https://m.media-amazon.com/images/I/51ahQnT3kaS._AC_SL1500_.jpg'
                         category={page}
+                        setItem={setItem}
                     />
                     <Product
                         id='12345'
@@ -143,6 +157,7 @@ const Products = ({ page, setCategory }) => {
                         rating={4}
                         image='https://m.media-amazon.com/images/I/51ahQnT3kaS._AC_SL1500_.jpg'
                         category={page}
+                        setItem={setItem}
                     />
                     <Product
                         id='12345'
@@ -151,6 +166,7 @@ const Products = ({ page, setCategory }) => {
                         rating={4}
                         image='https://m.media-amazon.com/images/I/51ahQnT3kaS._AC_SL1500_.jpg'
                         category={page}
+                        setItem={setItem}
                     />
                 </div>}
             </div>

@@ -1,10 +1,11 @@
 import '../styles.css'
 import StarTwoToneIcon from '@material-ui/icons/StarTwoTone'
+import { Link } from 'react-router-dom'
 
-const Product = ({ id, title, price, rating, image, category }) => {
+const Product = ({ id, title, price, rating, image, category, setItem }) => {
 
     const viewItem = () => {
-        
+
     }
 
     return (
@@ -27,7 +28,13 @@ const Product = ({ id, title, price, rating, image, category }) => {
                     ))}
                 </div>
             </div>
-            <button /* onClick={addToCart} */>View Item</button>
+            <button 
+                onClick={e => setItem({id: id, title: title, price: price, rating: rating, image: image, category: category})}
+            >
+                <Link to={`/products/item`} style={{ textDecoration:'none', color:"black" }}>
+                    View Item
+                </Link>
+            </button>
         </div>
     )
 }
