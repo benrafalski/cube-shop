@@ -55,6 +55,12 @@ function App() {
               rating={item?.rating}
               image={item?.image}
               category={item?.category}
+              type={item?.type}
+              magnets={item?.magnets}
+              size={item?.size}
+              weight={item?.weight}
+              released={item?.released}
+              description={item?.description}
             />
             <Footer/>
           </Route>

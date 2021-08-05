@@ -1,8 +1,11 @@
 import '../styles.css'
 import StarTwoToneIcon from '@material-ui/icons/StarTwoTone'
 import { Link } from 'react-router-dom'
+import { colors } from '@material-ui/core'
 
-const ViewItem = ({ id, title, price, rating, image, category }) => {
+const ViewItem = ({ id, title, price, rating, image, category,
+                    type, magnets, size, weight, released, description }) => {
+                        console.log(category)
     return (
         <div class='view--item'>
             <div className='view--item__container'>
@@ -15,7 +18,7 @@ const ViewItem = ({ id, title, price, rating, image, category }) => {
                             <strong>{price}</strong>
                         </p>
                         <div className='view--item__rating'>
-                            <p>Rating:</p>
+                            <p className='view--item__rating--text'>Rating:</p>
                             {Array(rating)
                                 .fill()
                                 .map((_, i) => (
@@ -24,9 +27,24 @@ const ViewItem = ({ id, title, price, rating, image, category }) => {
                         </div>
                     </div>   
                 </div> 
-                <button className='view--item__info__btn'>
+                <button className={ "view__" + category + ' view--item__info__btn' }>
                     <span>Add to Cart</span>
                 </button> 
+                <div className='view--item__details__container'>
+                    <div className='view--item__details'>
+                        <h5>Details</h5>
+                        <p>Type: {type}</p>
+                        <p>Magnets: {magnets}</p>
+                        <p>Size: {size}</p>
+                        <p>Weight: {weight}</p>
+                        <p>Released: {released}</p>
+                    </div>
+                    <div className='view--item__description'>
+                        <h5>Description</h5>
+                        <p>{description}</p>
+                    </div>
+                </div>
+                
             </div>
         </div>
     )

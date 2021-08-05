@@ -1286,10 +1286,28 @@
 	flex-direction: column;
 	align-items: center;
 	width: 550px;
-	height: 600px;
-	border: 1px solid lightgray;
+	max-height: 900px;
+	border: 1px solid gray;
+	border-radius: 4px;
 	margin-top: 50px;
 	color: #fff;
+}
+
+.view--item__container > p {
+	margin-top: 60px;
+	margin-bottom: 0px;
+	font-size: 1.6rem;
+	text-align: center;
+	padding-bottom: 40px;
+	background: #11998e;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background-size: 100%;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-text-fill-color: transparent;
+	/* border-bottom: 1px solid lightgray; */
 }
 
 .view--item__info__container > img {
@@ -1300,26 +1318,63 @@
 	margin-top: 5px;
     margin-bottom: 5px;
 	margin-left: 15px;
+	transition: 0.3s ease-in;
+}
+
+.view--item__info__container > img:hover{
+	transform: scale(1.075);
+	transition: 0.3s ease-in;
 }
 
 .view--item__info__container {
 	display: flex;
 	flex-direction: row;
 	margin: 25px;
+	border-top: 1px solid lightgray;
+	border-bottom: 1px solid lightgray;
+	padding-bottom: 40px;
+	padding-top: 40px;
 }
 
 .view--item__info {
 	display: flex;
 	flex-direction: column;
+	margin-top: 3px;
 	padding: 20px;
 	margin-left: 30px;
 	justify-content: center;
 	height: 100%;
+	height: 270px;
+	border: 1px solid lightgray;
+	border-color: gray;
+	border-radius: 4px;
+	background: #da22ff;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #9114ff, #da22ff);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #8f0eff, #da22ff);
+	background-size: 100%;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-text-fill-color: transparent;
+	transition: 0.3s ease-in;
+}
+
+.view--item__info:hover{
+	transform: scale(1.075);
+	transition: 0.3s ease-in;
+	background: #da22ff;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #9114ff, #da22ff);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #8f0eff, #da22ff);
+	background-size: 100%;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-text-fill-color: transparent;
 }
 
 .view--item__info > p{
 	padding: 20px;
-	border: 1px solid lightgray;
+	/* border: 1px solid lightgray; */
 	/* height: 100%; */
 }
 
@@ -1332,8 +1387,7 @@
 	padding: 15px 60px;
 	border: none;
 	border-radius: 4px;
-	margin-top: 2rem;
-	margin-bottom: 2rem;
+	margin-bottom: 3px;
 	/* cursor: pointer; */
 	position: relative;
 	transition: all 0.35s;
@@ -1342,6 +1396,31 @@
 	font-size: 20px;
 	text-align: center;
 }
+
+.view__speedcubes {
+	background: #38f9d7; 
+	background: -webkit-linear-gradient(to left, #43e97b 0%, #38f9d7 100%); 
+	background: linear-gradient(to left, #43e97b 0%, #38f9d7 100%)
+}
+
+.view__wca-puzzles {
+	background: #fa71cd; 
+	background: -webkit-linear-gradient(to left, #c471f5 0%, #fa71cd 100%); 
+	background: linear-gradient(to left, #c471f5 0%, #fa71cd 100%)
+}
+
+.view__large-puzzles {
+	background: #ffb199; 
+	background: -webkit-linear-gradient(to right, #ff0844 0%, #ffb199 100%); 
+	background: linear-gradient(to right, #ff0844 0%, #ffb199 100%)
+}
+
+.view__cuboid {
+	background: #330867; 
+	background: -webkit-linear-gradient(to right, #30cfd0 0%, #330867 100%); 
+	background: linear-gradient(to right, #30cfd0 0%, #330867 100%)
+}
+
 .view--item__info__btn span{
 	position: relative;
 	z-index: 2;
@@ -1366,9 +1445,117 @@
 .view--item__info__btn:hover:after{
 	width: 100%;
 }
+
+.view__speedcubes:after{
+	background: #38f9d7;
+}
+
+.view__wca-puzzles:after{
+	background: #fa71cd;
+}
+
+.view__large-puzzles:after{
+	background: #ff0844;
+}
+
+.view__cuboid:after{
+	background: #30cfd0;
+}
 .view--item__rating{
 	text-align: center;
-	border: 1px solid lightgray;
+	/* border: 1px solid lightgray; */
 	border-top: none;
 	padding: 20px;
+	color: #da22ff;
+	
+
+}
+
+.view--item__rating--text{
+	background: #da22ff; 
+	background: -webkit-linear-gradient(to right, #9114ff, #da22ff); 
+	background: linear-gradient(to right, #8f0eff, #da22ff);
+	background-size: 100%;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-text-fill-color: transparent;
+}
+
+.view--item__details__container{
+	display: flex;
+	flex-direction: row;
+	border-top: 1px solid lightgray;
+	margin: 25px;
+}
+
+.view--item__details{
+	text-align: left;
+	/* border-top: 1px solid lightgray; */
+	margin: 25px;
+}
+
+.view--item__details > p{
+	padding: 2px;
+	/* text-align: center; */
+	font-size: 12px;
+	background: #11998e;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #38ef7d, #11998e);
+	background-size: 100%;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-text-fill-color: transparent;
+}
+
+.view--item__details > h5{
+	/* text-align: center; */
+	padding: 2px;
+	font-size: 1rem;
+	background: #da22ff; 
+	background: -webkit-linear-gradient(to right, #9114ff, #da22ff); 
+	background: linear-gradient(to right, #8f0eff, #da22ff);
+	background-size: 100%;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-text-fill-color: transparent;
+}
+
+.view--item__description{
+	text-align: left;
+	/* border-top: 1px solid lightgray; */
+	margin: 25px;
+	max-width: 200px;
+}
+
+.view--item__description > p{
+	padding: 2px;
+	font-size: 12px;
+	/* text-align: center; */
+	background: #11998e;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #38ef7d, #11998e);
+	background-size: 100%;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-text-fill-color: transparent;
+}
+
+.view--item__description > h5{
+	/* text-align: center; */
+	padding: 2px;
+	/* text-align: left; */
+	margin-bottom: 5px;
+	font-size: 1rem;
+	background: #da22ff; 
+	background: -webkit-linear-gradient(to right, #9114ff, #da22ff); 
+	background: linear-gradient(to right, #8f0eff, #da22ff);
+	background-size: 100%;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-text-fill-color: transparent;
 }
