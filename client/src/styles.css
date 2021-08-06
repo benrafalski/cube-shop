@@ -1287,10 +1287,12 @@
 	align-items: center;
 	width: 550px;
 	max-height: 900px;
-	border: 1px solid gray;
+	/* border: 1px solid gray; */
 	border-radius: 4px;
 	margin-top: 50px;
 	color: #fff;
+	background: linear-gradient(to bottom, #131313, #000000);
+
 }
 
 .view--item__container > p {
