@@ -1,7 +1,7 @@
 import '../styles.css'
 import { Link } from 'react-router-dom'
 
-const Home = ({ setCategory }) => {
+const Home = () => {
     return (
         <div className='home'>
             {/* Hero section */}
@@ -10,7 +10,7 @@ const Home = ({ setCategory }) => {
                     <h1 className="hero__heading">Choose your <span>puzzles</span></h1>
                     <p className="hero__description">View our store today</p>
                     <button className="main__btn">{/* <a href="#">Explore</a> */}
-                        <Link to='/products'>
+                        <Link to='/categories'>
                             <span>Explore Now</span>
                         </Link>
                     </button>
@@ -42,7 +42,7 @@ const Home = ({ setCategory }) => {
                         <h2>3x3 Speed Cubes</h2>
                         <p>Quality Assured</p>
                         <div className="services__btn">
-                            <button onClick={e => setCategory('speedcubes')}>
+                            <button>
                                 <Link to='/products/speedcubes' style={{ textDecoration:'none', color:'#fff' }}>
                                     <span style={{ textDecoration:'none' }}>Shop Now</span>
                                 </Link>
@@ -53,7 +53,7 @@ const Home = ({ setCategory }) => {
                         <h2>WCA Puzzles</h2>
                         <p>2x2, Megaminx, Skewb</p>
                         <div className="services__btn">
-                            <button onClick={e => setCategory('wca-puzzles')}>
+                            <button>
                                 <Link to='/products/wca-puzzles' style={{ textDecoration:'none', color:'#fff' }}>
                                     <span style={{ textDecoration:'none' }}>Shop Now</span>
                                 </Link>
@@ -65,7 +65,7 @@ const Home = ({ setCategory }) => {
                         <p>Megaminx+</p>
                         
                         <div className="services__btn">
-                            <button onClick={e => setCategory('large-puzzles')}>
+                            <button>
                                 <Link to='/products/large-puzzles' style={{ textDecoration:'none', color:'#fff' }}>
                                     <span style={{ textDecoration:'none' }}>Shop Now</span>
                                 </Link>
@@ -76,7 +76,7 @@ const Home = ({ setCategory }) => {
                         <h2>Cuboids</h2>
                         <p>Shape Mods</p>
                         <div className="services__btn">
-                            <button onClick={e => setCategory('cuboid')}>
+                            <button>
                                 <Link to='/products/cuboid' style={{ textDecoration:'none', color:'#fff' }}>
                                     <span style={{ textDecoration:'none' }}>Shop Now</span>
                                 </Link>

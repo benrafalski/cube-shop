@@ -2,13 +2,13 @@ import { Link } from 'react-router-dom'
 import '../styles.css'
 import Product from './Product'
 
-const Products = ({ page, setCategory, setItem }) => {
+const Products = ({ page, setItem }) => {
     return (
         <div className='products'>
             <div className='products__container'>
                 <div className='products__btn--container'>
-                    <button className="products__btn" onClick={e => setCategory('')}>{/* <a href="#">Contact Us</a> */}
-                        <Link to='/products'>
+                    <button className="products__btn">{/* <a href="#">Contact Us</a> */}
+                        <Link to='/categories'>
                             <span>View Categories</span>
                         </Link>
                     </button>

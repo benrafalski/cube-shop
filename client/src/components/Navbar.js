@@ -2,7 +2,7 @@ import '../styles.css'
 import { Link, useHistory } from 'react-router-dom'
 import { useStateValue } from '../StateProvider'
 
-const Navbar = ({ setCurrentUser, setCategory }) => {
+const Navbar = ({ setCurrentUser }) => {
     const history = useHistory()
     const [{ cart, user }, dispatch] = useStateValue()
 
@@ -27,8 +27,8 @@ const Navbar = ({ setCurrentUser, setCategory }) => {
                 </div>
                 <ul className="navbar__menu">
                     <li className="navbar__item">
-                        <Link to='/products' style={{ textDecoration:'none' }}> 
-                            <span className='navbar__links' onClick={e => setCategory('')}>Products</span>
+                        <Link to='/categories' style={{ textDecoration:'none' }}> 
+                            <span className='navbar__links'>Products</span>
                         </Link>
                         {/* <a href="#home" class="navbar__links" id="home-page">Products</a> */}
                     </li>

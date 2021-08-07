@@ -32,22 +32,13 @@ function App() {
     console.log(currentUser)
   }, [currentUser])
 
-  useEffect(() =>{
-    console.log(category)
-  }, [category])
-
-  useEffect(() =>{
-    console.log(item)
-  }, [item])
 
   return (
     <Router>
       <div className="app">
         <Switch>
           <Route path={`/products/item`}>
-            <Navbar 
-              setCurrentUser={setCurrentUser} 
-              setCategory={setCategory}/>
+            <Navbar setCurrentUser={setCurrentUser} />
             <ViewItem 
               id={item?.id}
               title={item?.title}
@@ -64,18 +55,41 @@ function App() {
             />
             <Footer/>
           </Route>
-          <Route path={`/products/${category}`}>
-            <Navbar 
-              setCurrentUser={setCurrentUser} 
-              setCategory={setCategory}/>
-            {category 
-              ? <Products 
-                  page={category} 
-                  setCategory={setCategory} 
+          <Route path={'/products/speedcubes'}>
+            <Navbar setCurrentUser={setCurrentUser} />
+            <Products 
+                  page={'speedcubes'}  
                   setItem={setItem}
-                />
-              : <Categories setCategory={setCategory}/>
-            }   
+            />   
+            <Footer/>
+          </Route>
+          <Route path={'/products/wca-puzzles'}>
+            <Navbar setCurrentUser={setCurrentUser} />
+            <Products 
+                  page={'wca-puzzles'} 
+                  setItem={setItem}
+            />   
+            <Footer/>
+          </Route>
+          <Route path={'/products/large-puzzles'}>
+            <Navbar setCurrentUser={setCurrentUser} />
+            <Products 
+                  page={'large-puzzles'} 
+                  setItem={setItem}
+            />   
+            <Footer/>
+          </Route>
+          <Route path={'/products/cuboid'}>
+            <Navbar setCurrentUser={setCurrentUser} />
+            <Products 
+                  page={'cuboid'} 
+                  setItem={setItem}
+            />   
+            <Footer/>
+          </Route>
+          <Route path={'/categories'}>
+            <Navbar setCurrentUser={setCurrentUser} />
+            <Categories/>
             <Footer/>
           </Route>
           <Route path='/login'>
@@ -85,11 +99,8 @@ function App() {
             <Register/>
           </Route>
           <Route path='/'>
-            <Navbar 
-              setCurrentUser={setCurrentUser} 
-              setCategory={setCategory}
-            />
-            <Home setCategory={setCategory}/>
+            <Navbar setCurrentUser={setCurrentUser} />
+            <Home/>
             <Footer/>
           </Route>
         </Switch>
