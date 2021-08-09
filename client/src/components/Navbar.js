@@ -40,7 +40,7 @@ const Navbar = ({ setCurrentUser }) => {
                     </li>
                     <li className="navbar__item">
                         <Link to='/cart' style={{ textDecoration:'none' }}> 
-                            <span className='navbar__links'>Cart</span>
+                            <span className='navbar__links'>Cart&nbsp;{cart.length > 0 && (<div className='navbar__cartsize'>&nbsp;{cart.length}&nbsp;</div>)}</span>
                         </Link>
                         {/* <a href="#services" class="navbar__links" id="services-page">Services</a> */}
                     </li>

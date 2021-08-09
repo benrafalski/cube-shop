@@ -1,12 +1,19 @@
 import '../styles.css'
 import StarTwoToneIcon from '@material-ui/icons/StarTwoTone'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { colors } from '@material-ui/core'
 import { useStateValue } from '../StateProvider'
+import { useEffect } from 'react'
 
-const ViewItem = ({ id, title, price, rating, image, category,
-                    type, magnets, size, weight, released, description }) => {
+const ViewItem = ({ id, title, price, rating, image, category, type, magnets, size, weight, released, description }) => {
+    const history = useHistory()
     const [{ cart }, dispatch] = useStateValue()
+
+    useEffect(() => {
+        if(title == undefined){
+            history.push('/categories')
+        }
+    }, [title])
 
     const addToCart = () => {
         dispatch({

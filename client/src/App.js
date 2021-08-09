@@ -1,7 +1,7 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, useHistory } from 'react-router-dom';
 import Home from './components/Home';
 import Login from './components/Login';
 import { useEffect, useState } from 'react';
@@ -13,9 +13,11 @@ import ViewItem from './components/ViewItem';
 import Cart from './components/Cart';
 
 function App() {
+
   const [currentUser, setCurrentUser] = useState({})
   const [item, setItem] = useState({})
   const [{}, dispatch] = useStateValue()
+
 
   useEffect(() => {
     if(currentUser.email){

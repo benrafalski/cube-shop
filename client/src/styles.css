@@ -62,6 +62,15 @@
 	height: 100%;
 	transition: all 0.3s ease;
 }
+
+.navbar__cartsize{
+	background-color: #a8ff78;
+	background-image: linear-gradient(to top, #78ffd6 0%, #a8ff78 100%);
+	background-size: 100%;
+	color: #535353;
+	border-radius: 10000px;
+	text-align: center;
+}
 .navbar__btn{
 	display: flex;
 	justify-content: center;
