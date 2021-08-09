@@ -1,4 +1,4 @@
-import { useHistory } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { useStateValue } from '../StateProvider'
 import CurrencyFormat from 'react-currency-format'
 import '../styles.css'
@@ -54,8 +54,10 @@ const Cart = ({ setItem }) => {
                         thousandSeparator={true}
                         prefix={'$'}
                     />
-                    <button onClick={e => history.push('/checkout')}>
-                        Proceed to Checkout
+                    <button className='subtotal__btn'>
+                        <Link to='/checkout'>
+                            Proceed to Checkout
+                        </Link>
                     </button>
                 </div>
             </div>

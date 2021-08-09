@@ -79,7 +79,7 @@ const Products = ({ page, setItem }) => {
                 {(page === 'wca-puzzles') &&
                 <div className='products__row'>
                     <Product
-                        id='12345'
+                        id='2222'
                         title='GAN 249 V2 M 2x2 (Stickerless)'
                         price={15.99}
                         rating={4}
@@ -94,7 +94,7 @@ const Products = ({ page, setItem }) => {
                         description={'The GAN 249 V2 M 2x2 is the updated version of the popular 249. The V2 M comes with a brighter colored tiles, primary internals, and magnets pre-installed. One of the most notable features of the 249 V2 M is the honeycomb design that is intended to to create a smoother feel and prolong the life of lubricant. The addition of magnets helps to improve control and overall stability when speedsolving!'}
                     />
                     <Product
-                        id='12345'
+                        id='2222'
                         title='GAN 249 V2 M 2x2 (Stickerless)'
                         price={15.99}
                         rating={4}
@@ -109,7 +109,7 @@ const Products = ({ page, setItem }) => {
                         description={'The GAN 249 V2 M 2x2 is the updated version of the popular 249. The V2 M comes with a brighter colored tiles, primary internals, and magnets pre-installed. One of the most notable features of the 249 V2 M is the honeycomb design that is intended to to create a smoother feel and prolong the life of lubricant. The addition of magnets helps to improve control and overall stability when speedsolving!'}
                     />
                     <Product
-                        id='12345'
+                        id='2222'
                         title='GAN 249 V2 M 2x2 (Stickerless)'
                         price={15.99}
                         rating={4}
@@ -124,7 +124,7 @@ const Products = ({ page, setItem }) => {
                         description={'The GAN 249 V2 M 2x2 is the updated version of the popular 249. The V2 M comes with a brighter colored tiles, primary internals, and magnets pre-installed. One of the most notable features of the 249 V2 M is the honeycomb design that is intended to to create a smoother feel and prolong the life of lubricant. The addition of magnets helps to improve control and overall stability when speedsolving!'}
                     />
                     <Product
-                        id='12345'
+                        id='2222'
                         title='GAN 249 V2 M 2x2 (Stickerless)'
                         price={15.99}
                         rating={4}
@@ -142,7 +142,7 @@ const Products = ({ page, setItem }) => {
                 {(page === 'large-puzzles') &&
                 <div className='products__row'>
                     <Product
-                        id='12345'
+                        id='5'
                         title='YuXin Little Magic 8x8'
                         price={15.99}
                         rating={4}
@@ -157,7 +157,7 @@ const Products = ({ page, setItem }) => {
                         description={'The YuXin Little Magic 8x8 is a larger size budget-friendly 8x8 featuring buttery smooth turning and beautiful color shades. Coming in at 88mm in size the Little Magic 8x8 is by no means little and as a result, has bigger pieces that may be more comfortable for some.'}
                     />
                     <Product
-                        id='12345'
+                        id='5'
                         title='YuXin Little Magic 8x8'
                         price={15.99}
                         rating={4}
@@ -172,7 +172,7 @@ const Products = ({ page, setItem }) => {
                         description={'The YuXin Little Magic 8x8 is a larger size budget-friendly 8x8 featuring buttery smooth turning and beautiful color shades. Coming in at 88mm in size the Little Magic 8x8 is by no means little and as a result, has bigger pieces that may be more comfortable for some.'}
                     />
                     <Product
-                        id='12345'
+                        id='5'
                         title='YuXin Little Magic 8x8'
                         price={15.99}
                         rating={4}
@@ -187,7 +187,7 @@ const Products = ({ page, setItem }) => {
                         description={'The YuXin Little Magic 8x8 is a larger size budget-friendly 8x8 featuring buttery smooth turning and beautiful color shades. Coming in at 88mm in size the Little Magic 8x8 is by no means little and as a result, has bigger pieces that may be more comfortable for some.'}
                     />
                     <Product
-                        id='12345'
+                        id='5'
                         title='YuXin Little Magic 8x8'
                         price={15.99}
                         rating={4}
@@ -205,7 +205,7 @@ const Products = ({ page, setItem }) => {
                 {(page === 'cuboid') &&
                 <div className='products__row'>
                     <Product
-                        id='12345'
+                        id='1'
                         title='Cube4You Fully Fuctional 3x3x4'
                         price={12.95}
                         rating={4}
@@ -220,7 +220,7 @@ const Products = ({ page, setItem }) => {
                         description={'This is the Cube4You Fully Functional 3x3x4. This 3x3x4 is made by Cube4You and has very smooth rotation on all layers.'}
                     />
                     <Product
-                        id='12345'
+                        id='1'
                         title='Cube4You Fully Fuctional 3x3x4'
                         price={12.95}
                         rating={4}
@@ -235,7 +235,7 @@ const Products = ({ page, setItem }) => {
                         description={'This is the Cube4You Fully Functional 3x3x4. This 3x3x4 is made by Cube4You and has very smooth rotation on all layers.'}
                     />
                     <Product
-                        id='12345'
+                        id='1'
                         title='Cube4You Fully Fuctional 3x3x4'
                         price={12.95}
                         rating={4}
@@ -250,7 +250,7 @@ const Products = ({ page, setItem }) => {
                         description={'This is the Cube4You Fully Functional 3x3x4. This 3x3x4 is made by Cube4You and has very smooth rotation on all layers.'}
                     />
                     <Product
-                        id='12345'
+                        id='1'
                         title='Cube4You Fully Fuctional 3x3x4'
                         price={12.95}
                         rating={4}
