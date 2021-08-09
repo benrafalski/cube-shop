@@ -1561,3 +1561,109 @@
 	-webkit-text-fill-color: transparent;
 	-moz-text-fill-color: transparent;
 }
+
+/* cart styles */
+.cart {
+	display: flex;
+	padding: 20px;
+	background-color: #131313;
+	height: max-content;
+}
+
+.cart__items{
+	width: 100%;
+	margin-top: 20px;
+}
+
+.shopping__cart{
+	background: #da22ff; 
+	background: -webkit-linear-gradient(to right, #9114ff, #da22ff); 
+	background: linear-gradient(to right, #8f0eff, #da22ff);
+	background-size: 100%;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-text-fill-color: transparent;
+	margin-right: 10px;
+	padding: 10px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid lightgray;
+}
+
+.cart__empty--text{
+	color: #fff;
+	margin-left: 20px;
+	padding: 10px;
+}
+
+.subtotal{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
+	width: 200px;
+    height: 200px;
+    padding: 20px;
+    background-color: #131313;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+}
+
+.subtotal__amount{
+	background: #da22ff; 
+	background: -webkit-linear-gradient(to right, #9114ff, #da22ff); 
+	background: linear-gradient(to right, #8f0eff, #da22ff);
+	background-size: 100%;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-text-fill-color: transparent;
+}
+
+.subtotal__currency{
+	margin-top: 2px;
+}
+
+.cart__empty{
+	display: flex;
+	align-items: center;
+	margin: 2px;
+	margin-top: 20px;
+	background: #11998e;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #38ef7d, #11998e);
+	background-size: 100%;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-text-fill-color: transparent;
+}
+
+.cart__empty:hover{
+	background: #0f857b;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to left, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to left, #38ef7d, #11998e);
+	background-size: 100%;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-text-fill-color: transparent;
+	cursor: pointer;
+}
+
+.subtotal > button {
+    width: 100%;
+    height: 80px;
+    margin-top: 10px;
+	background: #59C173; 
+	background: -webkit-linear-gradient(to left, #5D26C1, #a17fe0, #59C173); 
+	background: linear-gradient(to left, #5D26C1, #a17fe0, #59C173);
+	border: none;
+	border-radius: 4px;
+	margin-top: 2rem;
+	/* cursor: pointer; */
+	transition: all 0.35s;
+	outline: none;
+	color: #fff;
+}

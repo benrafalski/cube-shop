@@ -3,6 +3,7 @@ import { useStateValue } from '../StateProvider'
 import CurrencyFormat from 'react-currency-format'
 import '../styles.css'
 import { getCartTotal } from '../reducer'
+import Product from './Product'
 
 const Cart = () => {
     const history = useHistory()
@@ -15,8 +16,23 @@ const Cart = () => {
                     <h1 className='shopping__cart'>Shopping Cart</h1>
                     <div>
                         {cart.length > 0 
-                            ? <h1>Items should show {cart.length}</h1>
-                            : <p>Cart is Empty</p>
+                            ? (cart.map((item => (
+                                <Product
+                                    id={item.id}
+                                    title={item.title}
+                                    price={item.price}
+                                    rating={item.rating}
+                                    image={item.image}
+                                    category={item.category}
+                                    type={item.type}
+                                    magnets={item.magnets}
+                                    size={item.size}
+                                    weight={item.weight}
+                                    released={item.released}
+                                    description={item.description}
+                                />
+                            ))))
+                            : <p className='cart__empty--text'>Cart is Empty</p>
                         }
                     </div>
                 </div>
@@ -26,8 +42,8 @@ const Cart = () => {
                     <CurrencyFormat
                         renderText={(value) => (
                             <>
-                                <p>Subtotal ({cart.length} items):</p>
-                                <p>{value}</p>
+                                <p className='subtotal__amount'>Subtotal ({cart.length} items):<br/><p className='subtotal__currency'>{value}</p></p>
+                                
                                 <small className='cart__empty'>Empty Cart</small>
                             </>
                         )}
