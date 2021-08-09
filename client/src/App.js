@@ -10,6 +10,7 @@ import Register from './components/Register';
 import Products from './components/Products';
 import Categories from './components/Categories';
 import ViewItem from './components/ViewItem';
+import Cart from './components/Cart';
 
 function App() {
   const [currentUser, setCurrentUser] = useState({})
@@ -29,7 +30,7 @@ function App() {
         user: null
       })
     }
-    console.log(currentUser)
+    //console.log(currentUser)
   }, [currentUser])
 
 
@@ -37,6 +38,11 @@ function App() {
     <Router>
       <div className="app">
         <Switch>
+          <Route path='/cart'>
+            <Navbar setCurrentUser={setCurrentUser} />
+            <Cart/>
+            <Footer/>
+          </Route>
           <Route path={`/products/item`}>
             <Navbar setCurrentUser={setCurrentUser} />
             <ViewItem 

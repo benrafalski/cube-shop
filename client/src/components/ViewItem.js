@@ -2,10 +2,31 @@ import '../styles.css'
 import StarTwoToneIcon from '@material-ui/icons/StarTwoTone'
 import { Link } from 'react-router-dom'
 import { colors } from '@material-ui/core'
+import { useStateValue } from '../StateProvider'
 
 const ViewItem = ({ id, title, price, rating, image, category,
                     type, magnets, size, weight, released, description }) => {
-                        console.log(category)
+    const [{ cart }, dispatch] = useStateValue()
+
+    const addToCart = () => {
+        dispatch({
+            type: 'ADD_TO_CART',
+            item: {
+                id: id,
+                title: title,
+                price: price,
+                rating: rating,
+                image: image,
+                category: category,
+                type: type,
+                magnets: magnets,
+                size: size,
+                weight: weight,
+                released: released,
+                description: description
+            }
+        })
+    }
     return (
         <div class='view--item'>
             <div className='view--item__container'>
@@ -27,7 +48,10 @@ const ViewItem = ({ id, title, price, rating, image, category,
                         </div>
                     </div>   
                 </div> 
-                <button className={ "view__" + category + ' view--item__info__btn' }>
+                <button 
+                    className={ "view__" + category + ' view--item__info__btn' } 
+                    onClick={addToCart}
+                >
                     <span>Add to Cart</span>
                 </button> 
                 <div className='view--item__details__container'>
