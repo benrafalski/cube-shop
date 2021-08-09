@@ -15,7 +15,6 @@ import Cart from './components/Cart';
 function App() {
   const [currentUser, setCurrentUser] = useState({})
   const [item, setItem] = useState({})
-  const [category, setCategory] = useState('')
   const [{}, dispatch] = useStateValue()
 
   useEffect(() => {

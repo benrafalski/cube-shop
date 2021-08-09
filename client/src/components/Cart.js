@@ -9,6 +9,12 @@ const Cart = ({ setItem }) => {
     const history = useHistory()
     const [{ cart }, dispatch] = useStateValue()
 
+    const emptyCart = () => {
+        dispatch({
+            type: 'EMPTY_CART'
+        })
+    }
+
     return (
         <div className='cart'>
             <div className='cart__items'>
@@ -45,7 +51,10 @@ const Cart = ({ setItem }) => {
                             <>
                                 <p className='subtotal__amount'>Subtotal ({cart.length} items):<br/><p className='subtotal__currency'>{value}</p></p>
                                 
-                                <small className='cart__empty'>Empty Cart</small>
+                                <small 
+                                    className='cart__empty'
+                                    onClick={emptyCart}
+                                >Empty Cart</small>
                             </>
                         )}
                         decimalScale={2}

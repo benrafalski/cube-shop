@@ -1562,6 +1562,7 @@
 	padding: 20px;
 	background-color: #131313;
 	height: max-content;
+	min-height: 500px;
 }
 
 .cart__items{

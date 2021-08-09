@@ -23,7 +23,23 @@ const CartProduct = ({ id, title, price, rating, image, category, setItem, type,
             <img src={image}/>
             <div className='cart__product__info'>
                 <Link to='/products/item' style={{ textDecoration:'none' }}>
-                    <p className='cart__product__title'>{title}</p>
+                    <p 
+                        className='cart__product__title'
+                        onClick={e => setItem({
+                            id: id, 
+                            title: title, 
+                            price: price, 
+                            rating: rating, 
+                            image: image, 
+                            category: category, 
+                            type: type, 
+                            magnets: magnets, 
+                            size: size, 
+                            weight: weight, 
+                            released: released, 
+                            description: description
+                        })}
+                    >{title}</p>
                 </Link>
                 <p className='cart__product__price'>
                     <small>$</small>
