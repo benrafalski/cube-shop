@@ -40,7 +40,7 @@ function App() {
         <Switch>
           <Route path='/cart'>
             <Navbar setCurrentUser={setCurrentUser} />
-            <Cart/>
+            <Cart setItem={setItem}/>
             <Footer/>
           </Route>
           <Route path={`/products/item`}>

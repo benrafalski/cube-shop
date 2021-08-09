@@ -5,15 +5,9 @@ import { Link } from 'react-router-dom'
 const Product = ({ id, title, price, rating, image, category, setItem,
                    type, magnets, size, weight, released, description }) => {
 
-    const viewItem = () => {
-
-    }
 
     return (
-        <div 
-            className={category + ' product'}
-            onClick={viewItem}
-        >
+        <div className={category + ' product'}>
             <img src={image}/>
             <div className='product__info'>
                 <p>{title}</p>

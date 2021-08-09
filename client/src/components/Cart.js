@@ -3,9 +3,9 @@ import { useStateValue } from '../StateProvider'
 import CurrencyFormat from 'react-currency-format'
 import '../styles.css'
 import { getCartTotal } from '../reducer'
-import Product from './Product'
+import CartProduct from './CartProduct'
 
-const Cart = () => {
+const Cart = ({ setItem }) => {
     const history = useHistory()
     const [{ cart }, dispatch] = useStateValue()
 
@@ -17,7 +17,8 @@ const Cart = () => {
                     <div>
                         {cart.length > 0 
                             ? (cart.map((item => (
-                                <Product
+                                <CartProduct
+                                    setItem={setItem}
                                     id={item.id}
                                     title={item.title}
                                     price={item.price}
