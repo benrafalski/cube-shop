@@ -67,7 +67,7 @@
 	background-color: #a8ff78;
 	background-image: linear-gradient(to top, #78ffd6 0%, #a8ff78 100%);
 	background-size: 100%;
-	color: #535353;
+	color: #333333;
 	border-radius: 10000px;
 	text-align: center;
 }
@@ -1113,7 +1113,7 @@
 .product:hover{
 	transform: scale(1.075);
 	transition: 0.3s ease-in;
-	cursor: pointer;
+	/* cursor: pointer; */
 }
 .product > img {
     max-height: 180px;
