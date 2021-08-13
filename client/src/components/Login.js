@@ -13,7 +13,6 @@ const Login = ({ setCurrentUser }) => {
         const fetchUsers = async () => {
             const res = await axios.get('/users')
             setUsers(res.data)
-            //console.log(users)
         }
 
         fetchUsers()
