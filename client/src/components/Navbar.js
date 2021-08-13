@@ -2,10 +2,16 @@ import '../styles.css'
 import { Link, useHistory } from 'react-router-dom'
 import { useStateValue } from '../StateProvider'
 import styled from 'styled-components'
+import { useEffect, useState } from 'react'
 
 const Navbar = ({ setCurrentUser }) => {
     const history = useHistory()
     const [{ cart, user }, dispatch] = useStateValue()
+    const [active, setActive] = useState(false)
+
+    useEffect(() => {
+        setActive(false)
+    },[])
 
     const handleLogin = () => {
         if(user){
@@ -14,47 +20,93 @@ const Navbar = ({ setCurrentUser }) => {
         history.push('/')
     }
 
+    const activateMenu = () => {
+        setActive(!active)
+    }
+
     return (
         <NavBar>
             <Container>
                 <Link to='/' style={{ textDecoration:'none' }}>
                     <Logo>CUBEsTOR</Logo>
                 </Link>
-                <Toggle>
-                    <Bar></Bar>
-                    <Bar></Bar>
-                    <Bar></Bar>
-                </Toggle>
-                <Menu>
-                    <NavItem>
-                        <Link to='/categories' style={{ textDecoration:'none' }}> 
-                            <Links>Products</Links>
-                        </Link>
-                    </NavItem>
-                    <NavItem>
-                        <Link to='/about' style={{ textDecoration:'none' }}> 
-                            <Links>About</Links>
-                        </Link>
-                    </NavItem>
-                    <NavItem>
-                        <Link to='/cart' style={{ textDecoration:'none' }}> 
-                            <Links>Cart&nbsp;{cart.length > 0 && (<CartSize>&nbsp;{cart.length}&nbsp;</CartSize>)}</Links>
-                        </Link>
-                    </NavItem>
-                    <NavButton>
-                    {user 
-                        ? 
-                            <Link to='/' style={{ textDecoration:'none' }}>
-                                <LinkButton onClick={handleLogin}>Log out</LinkButton>
-                            </Link>
-                        :
-                            <Link to='/login' style={{ textDecoration:'none' }}> 
-                                <LinkButton>Log in</LinkButton>
-                            </Link>
-                    
-                    }
-                    </NavButton>
-                </Menu>
+                {active ?
+                    <>
+                        <Active onClick={activateMenu}>
+                            <ActiveBar></ActiveBar>
+                            <ActiveBar></ActiveBar>
+                            <ActiveBar></ActiveBar>
+                        </Active>
+                        <ActiveMenu>
+                            <NavItem>
+                                <Link to='/categories' style={{ textDecoration:'none' }}> 
+                                    <Links onClick={e => setActive(false)}>Products</Links>
+                                </Link>
+                            </NavItem>
+                            <NavItem>
+                                <Link to='/about' style={{ textDecoration:'none' }}> 
+                                    <Links onClick={e => setActive(false)}>About</Links>
+                                </Link>
+                            </NavItem>
+                            <NavItem>
+                                <Link to='/cart' style={{ textDecoration:'none' }}> 
+                                    <Links onClick={e => setActive(false)}>Cart&nbsp;{cart.length > 0 && (<CartSize>&nbsp;{cart.length}&nbsp;</CartSize>)}</Links>
+                                </Link>
+                            </NavItem>
+                            <NavButton>
+                            {user 
+                                ? 
+                                    <Link to='/' style={{ textDecoration:'none' }}>
+                                        <LinkButton onClick={handleLogin}>Log out</LinkButton>
+                                    </Link>
+                                :
+                                    <Link to='/login' style={{ textDecoration:'none' }}> 
+                                        <LinkButton>Log in</LinkButton>
+                                    </Link>
+                            
+                            }
+                            </NavButton>
+                        </ActiveMenu>
+                    </>
+                    :
+                    <>
+                        <Toggle onClick={activateMenu}>
+                            <Bar></Bar>
+                            <Bar></Bar>
+                            <Bar></Bar>
+                        </Toggle>
+                        <Menu>
+                            <NavItem>
+                                <Link to='/categories' style={{ textDecoration:'none' }}> 
+                                    <Links>Products</Links>
+                                </Link>
+                            </NavItem>
+                            <NavItem>
+                                <Link to='/about' style={{ textDecoration:'none' }}> 
+                                    <Links>About</Links>
+                                </Link>
+                            </NavItem>
+                            <NavItem>
+                                <Link to='/cart' style={{ textDecoration:'none' }}> 
+                                    <Links>Cart&nbsp;{cart.length > 0 && (<CartSize>&nbsp;{cart.length}&nbsp;</CartSize>)}</Links>
+                                </Link>
+                            </NavItem>
+                            <NavButton>
+                            {user 
+                                ? 
+                                    <Link to='/' style={{ textDecoration:'none' }}>
+                                        <LinkButton onClick={handleLogin}>Log out</LinkButton>
+                                    </Link>
+                                :
+                                    <Link to='/login' style={{ textDecoration:'none' }}> 
+                                        <LinkButton>Log in</LinkButton>
+                                    </Link>
+                            
+                            }
+                            </NavButton>
+                        </Menu>
+                    </>
+                }
             </Container>
         </NavBar>
     )
@@ -115,10 +167,10 @@ const Logo = styled.span`
 const Toggle = styled.div`
     @media screen and (max-width: 960px){
         width: 25px;
-		height: 3px;
+		height: 20px;
 		margin: 5px auto;
 		transition: all 0.3s ease-in-out;
-		background: #fff;
+		/* background: #fff; */
 
         position: absolute;
 		top: 20%;
@@ -129,6 +181,32 @@ const Toggle = styled.div`
 		cursor: pointer;
     }
 `;
+
+const Active = styled.div`
+    @media screen and (max-width: 960px){
+        width: 25px;
+		height: 20px;
+		margin: 5px auto;
+		transition: all 0.3s ease-in-out;
+
+        position: absolute;
+		top: 20%;
+		right: 5%;
+		transform: translate(5%, 20%);
+
+        display: block;
+		cursor: pointer;
+
+        /* background: #131313;
+		top: 100%;
+		opacity: 1;
+		transition: all 0.5s ease;
+		z-index: 99;
+		height: 60vh;
+		font-size: 1.6rem; */
+    }  
+`;
+
 const Bar = styled.span`
     @media screen and (max-width: 960px){
         width: 25px;
@@ -141,6 +219,33 @@ const Bar = styled.span`
 		cursor: pointer;
     }
 `;
+
+const ActiveBar = styled.span`
+    @media screen and (max-width: 960px){
+        width: 25px;
+		height: 3px;
+		margin: 5px auto;
+		transition: all 0.3s ease-in-out;
+		background: #fff;
+
+        display: block;
+		cursor: pointer;
+
+        &:nth-child(2){
+            opacity: 0;
+        }
+
+        &:nth-child(1){
+            transition: all 0.3s ease-in-out;
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        &:nth-child(3){
+            transform: translateY(-8px) rotate(-45deg);
+        }
+    }
+`;
+
 const Menu = styled.ul`
     display: flex;
 	align-items: center;
@@ -167,6 +272,34 @@ const Menu = styled.ul`
 		font-size: 1.6rem; */
     }
 `;
+
+const ActiveMenu = styled.ul`
+    display: flex;
+	align-items: center;
+	list-style: none;
+
+    @media screen and (max-width: 960px){
+        display: grid;
+		grid-template-columns: auto;
+		margin: 0;
+		width: 100%;
+		position: absolute;
+		top: -1000px;
+		opacity: 1;
+		transition: all 0.5s ease;
+		z-index: -1;
+
+        //active
+        background: #131313;
+		top: 100%;
+		opacity: 1;
+		transition: all 0.5s ease;
+		z-index: 99;
+		height: 60vh;
+		font-size: 1.6rem;
+    }
+`;
+
 const NavItem = styled.li`
     height: 80px;
 
@@ -237,8 +370,9 @@ const LinkButton = styled.span`
         display: flex;
 		justify-content: center;
 		align-items: center;
-		width: 80%;
-		height: 80px;
+        text-align: center;
+		width: 100%;
+		height: 100%;
 		margin: 0;
     }
 `;
