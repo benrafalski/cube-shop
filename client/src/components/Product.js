@@ -80,6 +80,7 @@ const Container = styled.div`
 
         div {
             color: rgba(0, 0, 0, 0.8);
+            font-weight: 300;
         }
     }
 
