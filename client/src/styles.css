@@ -1144,7 +1144,7 @@
 	transition: 0.3s ease-in;
 	box-shadow: rgb(0 0 0 / 80%) 0px 40px 58px -16px, rgb(0 0 0 / 72%) 0px 30px 22px -10px;
 	border-color: rgba(211, 211, 211, 0.8); 
-	color: rgba(0, 0, 0, 0.8);
+	color: rgba(128, 0, 0, 0.8);
 	/* cursor: pointer; */
 }
 .product > img {

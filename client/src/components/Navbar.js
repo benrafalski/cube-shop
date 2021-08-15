@@ -302,6 +302,7 @@ const ActiveMenu = styled.ul`
 
 const NavItem = styled.li`
     height: 80px;
+    padding: 0px 20px;
 
     @media screen and (max-width: 960px){
         width: 100%;
@@ -312,8 +313,11 @@ const Links = styled.span`
 	display: flex;
 	align-items: center;
 	justify-content: center;
+    text-align: center;
 	width: 125px;
 	text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 	height: 100%;
 	transition: all 0.3s ease;
 
@@ -356,13 +360,15 @@ const LinkButton = styled.span`
 	text-decoration: none;
 	padding: 10px 20px;
 	height: 100%;
-	width: 100%;
+	width: 10px;
 	border: none;
 	outline: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 	border-radius: 4px;
 	background: #59C173; 
-	background: -webkit-linear-gradient(to left, #5D26C1, #a17fe0, #59C173); 
-	background: linear-gradient(to left, #5D26C1, #a17fe0, #59C173);
+	/* background: -webkit-linear-gradient(to left, #5D26C1, #a17fe0, #59C173); 
+	background: linear-gradient(to left, #5D26C1, #a17fe0, #59C173); */
 	color: #fff;
 	transition: all 0.3s ease;
 
@@ -371,7 +377,7 @@ const LinkButton = styled.span`
 		justify-content: center;
 		align-items: center;
         text-align: center;
-		width: 100%;
+		width: 200px;
 		height: 100%;
 		margin: 0;
     }

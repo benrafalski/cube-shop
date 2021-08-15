@@ -55,8 +55,9 @@ const Product = ({ id, title, price, rating, image, category, setItem,
 const Container = styled.div`
     display: block;
 	text-align: center;
+    margin: auto;
 	/* padding: 46.25%; */
-	width: 100%;
+	width: 200px;
 	height: 100%;
 	max-height: 400px;
 	min-height: 200px;
@@ -81,6 +82,10 @@ const Container = styled.div`
         div {
             color: rgba(0, 0, 0, 0.8);
             font-weight: 300;
+
+            /* p {
+                color: rgba(0, 0, 0, 0.8);
+            } */
         }
     }
 
