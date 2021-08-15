@@ -3,6 +3,9 @@ import { Link, useHistory } from 'react-router-dom'
 import { useStateValue } from '../StateProvider'
 import styled from 'styled-components'
 import { useEffect, useState } from 'react'
+import ShopRoundedIcon from '@material-ui/icons/ShopRounded';
+import ShoppingCartRoundedIcon from '@material-ui/icons/ShoppingCartRounded';
+import InfoRoundedIcon from '@material-ui/icons/InfoRounded';
 
 const Navbar = ({ setCurrentUser }) => {
     const history = useHistory()
@@ -77,18 +80,18 @@ const Navbar = ({ setCurrentUser }) => {
                         </Toggle>
                         <Menu>
                             <NavItem>
-                                <Link to='/categories' style={{ textDecoration:'none' }}> 
-                                    <Links>Products</Links>
+                                <Link to='/categories' style={{ textDecoration:'none' }}>
+                                    <Links><ShopRoundedIcon style={{  marginBottom: '4px' }}/>&nbsp;Products</Links>
                                 </Link>
                             </NavItem>
                             <NavItem>
                                 <Link to='/about' style={{ textDecoration:'none' }}> 
-                                    <Links>About</Links>
+                                    <Links><InfoRoundedIcon style={{ marginBottom: '4px' }}/>&nbsp;About</Links>
                                 </Link>
                             </NavItem>
                             <NavItem>
                                 <Link to='/cart' style={{ textDecoration:'none' }}> 
-                                    <Links>Cart&nbsp;{cart.length > 0 && (<CartSize>&nbsp;{cart.length}&nbsp;</CartSize>)}</Links>
+                                    <Links><ShoppingCartRoundedIcon style={{ marginBottom: '4px' }}/>{cart.length > 0 && (<CartSize>{cart.length}</CartSize>)}&nbsp;Cart</Links>
                                 </Link>
                             </NavItem>
                             <NavButton>
@@ -320,10 +323,40 @@ const Links = styled.span`
     letter-spacing: 2px;
 	height: 100%;
 	transition: all 0.3s ease;
+    position: relative;
+
+    &:before{
+        background-color: #9518fc;
+        border-radius: 0px 0px 4px 4px;
+        bottom: 0px;
+        content: '';
+        height: 2px;
+        left: 0px;
+        opacity: 0;
+        position: absolute;
+        right: 0px;
+        transform-origin: left center;
+        transform: scaleX(0);
+        transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+        visibility: hidden;
+        width: 100%;
+    }
 
     &:hover{
         color: #9518fc;
         transition: all 0.3s ease;
+
+        span {
+            color: #9518fc;
+            transition: all 0.3s ease;
+        }
+
+        &:before{
+            color: #9518fc;
+            transform: scaleX(1);
+            visibility: visible;
+            opacity: 1 !important;
+        }
     }
 
     @media screen and (max-width: 960px){
@@ -334,13 +367,12 @@ const Links = styled.span`
     }
 `;
 
-const CartSize = styled.div`
-    background-color: #a8ff78;
-	background-image: linear-gradient(to top, #78ffd6 0%, #a8ff78 100%);
-	background-size: 100%;
-	color: #333333;
-	border-radius: 10000px;
-	text-align: center;
+const CartSize = styled.span`
+    position: relative;
+    font-size: 18px;
+    top: -18px;
+    left: -17px;
+	color: #fff;
 `;
 const NavButton = styled.li`
     display: flex;
@@ -360,7 +392,7 @@ const LinkButton = styled.span`
 	text-decoration: none;
 	padding: 10px 20px;
 	height: 100%;
-	width: 10px;
+	width: 100%;
 	border: none;
 	outline: none;
     text-transform: uppercase;
