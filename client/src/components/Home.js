@@ -1,11 +1,13 @@
 import '../styles.css'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import ImgSlider from './ImgSlider'
 
 const Home = () => {
     return (
         <div>
             <Hero>
+                <ImgSlider/>
                 <HeroContainer>
                     <HeroHeading>
                         Choose your <span>puzzles</span>
@@ -115,7 +117,8 @@ const Home = () => {
 const Hero = styled.div`
     background: #000000;
 	background: linear-gradient(to right, #161616, #000000);
-	padding: 200px 0;
+	padding: 200px calc(3.5vw + 5px);
+    margin-top: -110px;
 `;
 const HeroContainer = styled.div`
     display: flex;
