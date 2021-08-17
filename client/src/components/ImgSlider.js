@@ -47,9 +47,10 @@ const Carousel = styled(Slider)`
         height: 100%;
         width: 5vw;
         z-index: 1;
+        background: black;
         &:hover {
             opacity: 1;
-            transition: opacity 0.2s ease 0s;
+            transition: opacity 0.5s ease 0s;
         }
     }
     ul li button {
@@ -102,9 +103,10 @@ const Wrap = styled.div`
             }
         }
         &:hover {
-            padding: 0;
+            padding: 0px;
             border: 4px solid rgba(249, 249, 249, 0.8);
             transition-duration: 200ms;
+            /* transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s; */
         }
     }
 `;

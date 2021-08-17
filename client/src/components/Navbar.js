@@ -429,6 +429,8 @@ const LinkButton = styled.span`
         background-color: #5D26C1;
         color: #a17fe0;
         box-shadow: rgb(0 0 0 / 80%) 0px 40px 58px -16px, rgb(0 0 0 / 72%) 0px 30px 22px -10px;
+        transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+        transform: scale(1.015);
     }
 
     @media screen and (max-width: 960px){

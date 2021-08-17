@@ -42,7 +42,7 @@ const Home = () => {
                 </MainContainer>
             </Main>
             <Services>
-                <h1>Our Shop</h1>
+                <h1 style={{ marginTop:'-100px' }}>Our Shop</h1>
                 <ServicesWrapper>
                     <ServicesCard>
                         <h2>3x3 Speed Cubes</h2>
@@ -346,8 +346,13 @@ const MainContent = styled.div`
     }
 `;
 const Services = styled.div`
-    background: #131313;
-	display: flex;
+    border-top: 12px solid #fff;
+    border-bottom: 12px solid #fff;
+    background: url('https://i.pinimg.com/originals/57/cc/88/57cc88c9b6db806d66200d89787bbc81.jpg');
+	background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
@@ -389,6 +394,8 @@ const ServicesCard = styled.div`
 	color: #fff;
 	background-image: linear-gradient(to right, #AAFFA9 0%, #11FFBD 100%);
 	transition: 0.3s ease-in;
+    box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px, rgb(0 0 0 /73%) 0px 16px 10px -10px;
+
 
     &:nth-child(2){
         background-image: linear-gradient(to top, #c471f5 0%, #fa71cd 100%);
@@ -432,8 +439,9 @@ const ServicesCard = styled.div`
     }
 
     &:hover{
-        transform: scale(1.075);
-        transition: 0.3s ease-in;
+        transform: scale(1.015);
+        box-shadow: rgb(0 0 0 / 80%) 0px 40px 58px -16px, rgb(0 0 0 / 72%) 0px 30px 22px -10px;
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
         cursor: pointer;
     }
 `;
