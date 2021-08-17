@@ -98,11 +98,11 @@ const Navbar = ({ setCurrentUser }) => {
                             {user 
                                 ? 
                                     <Link to='/' style={{ textDecoration:'none' }}>
-                                        <LinkButton onClick={handleLogin}>Log out</LinkButton>
+                                        <LinkButton onClick={handleLogin}>Logout</LinkButton>
                                     </Link>
                                 :
                                     <Link to='/login' style={{ textDecoration:'none' }}> 
-                                        <LinkButton>Log in</LinkButton>
+                                        <LinkButton>Login</LinkButton>
                                     </Link>
                             
                             }
@@ -362,8 +362,26 @@ const Links = styled.span`
     @media screen and (max-width: 960px){
         text-align: center;
 		padding: 2rem;
-		width: 100%;
+		width: 20%;
 		display: table;
+        margin: auto;
+
+        &:hover{
+            color: #9518fc;
+            transition: all 0.3s ease;
+
+            span {
+                color: #9518fc;
+                transition: all 0.3s ease;
+            }
+
+            &:before{
+                color: #9518fc;
+                transform: scaleX(1);
+                visibility: visible;
+                opacity: 1 !important;
+            }
+        }
     }
 `;
 
@@ -393,16 +411,25 @@ const LinkButton = styled.span`
 	padding: 10px 20px;
 	height: 100%;
 	width: 100%;
-	border: none;
+	border: 2px solid;
 	outline: none;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
 	border-radius: 4px;
-	background: #59C173; 
+	/* background: #a17fe0;  */
 	/* background: -webkit-linear-gradient(to left, #5D26C1, #a17fe0, #59C173); 
 	background: linear-gradient(to left, #5D26C1, #a17fe0, #59C173); */
-	color: #fff;
+	/* color: #5D26C1; */
 	transition: all 0.3s ease;
+    box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px, rgb(0 0 0 /73%) 0px 16px 10px -10px;
+    background: #131313;
+    color: #a17fe0;
+
+    &:hover{
+        background-color: #5D26C1;
+        color: #a17fe0;
+        box-shadow: rgb(0 0 0 / 80%) 0px 40px 58px -16px, rgb(0 0 0 / 72%) 0px 30px 22px -10px;
+    }
 
     @media screen and (max-width: 960px){
         display: flex;
