@@ -102,7 +102,8 @@ const LinkItems = styled.div`
 
     a:hover{
         color: #e9e9e9c2;
-        transition: 0.3 ease-out;
+        transform: scale(1.05);
+        transition: 0.5 ease-in;
     }
 
     @media screen and (max-width: 480px){
@@ -153,6 +154,12 @@ const SocialIcon = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	width: 240px;
+
+    svg:hover{
+        color: #e9e9e9c2;
+        transform: scale(1.05);
+        transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+    }
 `;
 
 //old
