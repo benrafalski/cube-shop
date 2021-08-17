@@ -53,6 +53,12 @@ const Content = styled.div`
 	background: #131313;
 	margin-top: 100px;
 	margin-bottom: 100px;
+    transition: 0.3s ease-out;
+
+    &:hover {
+        transition: 0.3s ease-in;
+        box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px, rgb(0 0 0 /73%) 0px 16px 10px -10px;
+    }
 `;
 
 const Header = styled.h1`

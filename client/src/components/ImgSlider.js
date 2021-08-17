@@ -74,6 +74,12 @@ const Carousel = styled(Slider)`
     .slick-prev {
         left: -2.5%;
     }
+    .slick-prev:before{
+        color: #8f0eff;
+    }
+    .slick-next:before{
+        color: #8f0eff;
+    }
     .slick-next {
         right: -2.5%;
     }

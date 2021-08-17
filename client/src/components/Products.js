@@ -285,6 +285,7 @@ const Content = styled.div`
     margin-right: auto;
     max-width: 2000px;
 	background-color: #131313;
+    min-height: 600px;
 	color: #131313;
 `;
 const Container = styled.div``;
