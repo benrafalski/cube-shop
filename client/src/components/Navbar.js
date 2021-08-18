@@ -420,7 +420,7 @@ const LinkButton = styled.span`
 	/* background: -webkit-linear-gradient(to left, #5D26C1, #a17fe0, #59C173); 
 	background: linear-gradient(to left, #5D26C1, #a17fe0, #59C173); */
 	/* color: #5D26C1; */
-	transition: all 0.3s ease;
+	transition: all 0.3s ease-in;
     box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px, rgb(0 0 0 /73%) 0px 16px 10px -10px;
     background: #131313;
     color: #a17fe0;

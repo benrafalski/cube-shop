@@ -43,41 +43,74 @@ const ViewItem = ({ id, title, price, rating, image, category, type, magnets, si
                 </Title>
                 <InfoContainer>
                     <img src={image}/>
-                    <Info>
-                        <p>
-                            <small>Price: $</small>
-                            <strong>{price}</strong> 
-                        </p>
-                        <Rating>
-                            <RatingText>Rating:</RatingText>
-                            {Array(rating)
-                                .fill()
-                                .map((_, i) => (
-                                <StarTwoToneIcon/>
-                            ))}
-                        </Rating>
-                    </Info>
+                    {category === 'speedcubes' && 
+                        <SC>
+                            <p>
+                                <small>Price: $</small>
+                                <strong>{price}</strong> 
+                            </p>
+                            <Rating>
+                                <RatingText>Rating:</RatingText>
+                                {Array(rating)
+                                    .fill()
+                                    .map((_, i) => (
+                                    <StarTwoToneIcon/>
+                                ))}
+                            </Rating>
+                        </SC>
+                    }
+                    {category === 'wca-puzzles' && 
+                        <WCA>
+                            <p>
+                                <small>Price: $</small>
+                                <strong>{price}</strong> 
+                            </p>
+                            <Rating>
+                                <RatingText>Rating:</RatingText>
+                                {Array(rating)
+                                    .fill()
+                                    .map((_, i) => (
+                                    <StarTwoToneIcon/>
+                                ))}
+                            </Rating>
+                        </WCA>
+                    }
+                    {category === 'large-puzzles' && 
+                        <Large>
+                            <p>
+                                <small>Price: $</small>
+                                <strong>{price}</strong> 
+                            </p>
+                            <Rating>
+                                <RatingText>Rating:</RatingText>
+                                {Array(rating)
+                                    .fill()
+                                    .map((_, i) => (
+                                    <StarTwoToneIcon/>
+                                ))}
+                            </Rating>
+                        </Large>
+                    }
+                    {category === 'cuboid' && 
+                        <Cuboid>
+                            <p>
+                                <small>Price: $</small>
+                                <strong>{price}</strong> 
+                            </p>
+                            <Rating>
+                                <RatingText>Rating:</RatingText>
+                                {Array(rating)
+                                    .fill()
+                                    .map((_, i) => (
+                                    <StarTwoToneIcon/>
+                                ))}
+                            </Rating>
+                        </Cuboid>
+                    }
                 </InfoContainer>
-                {category === 'speedcubes' && 
-                    <SCButton onClick={addToCart}>
+                <InfoButton onClick={addToCart}>
                         <span>Add to Cart</span>
-                    </SCButton>
-                }
-                {category === 'wca-puzzles' && 
-                    <WCAButton onClick={addToCart}>
-                        <span>Add to Cart</span>
-                    </WCAButton>
-                }
-                {category === 'large-puzzles' && 
-                    <LargeButton onClick={addToCart}>
-                        <span>Add to Cart</span>
-                    </LargeButton>
-                }
-                {category === 'cuboid' && 
-                    <CubiodButton onClick={addToCart}>
-                        <span>Add to Cart</span>
-                    </CubiodButton>
-                }
+                </InfoButton>
                 <DetailsContainer>
                     <Details>
                         <h5>Details</h5>
@@ -121,9 +154,9 @@ const Title = styled.p`
         font-size: 1.6rem;
         text-align: center;
         padding-bottom: 40px;
-        background: #11998e;  
-        background: -webkit-linear-gradient(to right, #38ef7d, #11998e);  
-        background: linear-gradient(to right, #38ef7d, #11998e); 
+        background: #fff;  
+        /* background: -webkit-linear-gradient(to right, #38ef7d, #11998e);  
+        background: linear-gradient(to right, #38ef7d, #11998e);  */
         background-size: 100%;
         -webkit-background-clip: text;
         -moz-background-clip: text;
@@ -145,16 +178,19 @@ const InfoContainer = styled.div`
         /* max-height: 180px; */
         width: 50%;
         height: auto;
-        object-fit: contain;
+        object-fit: cover;
         margin-top: 5px;
         margin-bottom: 5px;
         margin-left: 15px;
+        border-radius: 4px;
         transition: 0.3s ease-in;
+        box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px, rgb(0 0 0 /73%) 0px 16px 10px -10px;
     }
 
     img:hover{
-        transform: scale(1.075);
+        transform: scale(1.025);
         transition: 0.3s ease-in;
+        box-shadow: rgb(0 0 0 / 80%) 0px 40px 58px -16px, rgb(0 0 0 / 72%) 0px 30px 22px -10px;
     }
 
 `;
@@ -170,27 +206,31 @@ const Info = styled.div`
 	border: 1px solid lightgray;
 	border-color: gray;
 	border-radius: 4px;
-	background: #da22ff;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #9114ff, #da22ff);  /* Chrome 10-25, Safari 5.1-6 */
+    letter-spacing: 2px;
+    font-weight: bold;
+	/* background: #da22ff;  /* fallback for old browsers */
+	/* background: -webkit-linear-gradient(to right, #9114ff, #da22ff);  
 	background: linear-gradient(to right, #8f0eff, #da22ff);
 	background-size: 100%;
 	-webkit-background-clip: text;
 	-moz-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	-moz-text-fill-color: transparent;
+	-moz-text-fill-color: transparent; */ 
 	transition: 0.3s ease-in;
+    box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px, rgb(0 0 0 /73%) 0px 16px 10px -10px;
 
     &:hover{
-        transform: scale(1.075);
+        transform: scale(1.015);
         transition: 0.3s ease-in;
-        background: #da22ff;  /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #9114ff, #da22ff);  /* Chrome 10-25, Safari 5.1-6 */
+        /* background: #da22ff;  
+        background: -webkit-linear-gradient(to right, #9114ff, #da22ff);  
         background: linear-gradient(to right, #8f0eff, #da22ff);
         background-size: 100%;
         -webkit-background-clip: text;
         -moz-background-clip: text;
         -webkit-text-fill-color: transparent;
-        -moz-text-fill-color: transparent;
+        -moz-text-fill-color: transparent; */
+        box-shadow: rgb(0 0 0 / 80%) 0px 40px 58px -16px, rgb(0 0 0 / 72%) 0px 30px 22px -10px;
     }
 
     p{
@@ -199,50 +239,73 @@ const Info = styled.div`
         /* height: 100%; */
     }
 `;
+
+const SC = styled(Info)`
+    background-image: linear-gradient(to top, #43e97b 0%, #38f9d7 100%);
+`;
+const WCA = styled(Info)`
+    background-image: linear-gradient(to top, #c471f5 0%, #fa71cd 100%);
+`;
+const Large = styled(Info)`
+    background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+`;
+const Cuboid = styled(Info)`
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+`;
 const Rating = styled.div`
     text-align: center;
 	/* border: 1px solid lightgray; */
 	border-top: none;
 	padding: 20px;
-	color: #da22ff;
+    font-weight: 500;
+	color: #fff;
 `;
 const RatingText = styled.p`
-    background: #da22ff; 
+    font-weight: bold;
+    letter-spacing: 2px;
+    /* background: #da22ff; 
 	background: -webkit-linear-gradient(to right, #9114ff, #da22ff); 
 	background: linear-gradient(to right, #8f0eff, #da22ff);
 	background-size: 100%;
 	-webkit-background-clip: text;
 	-moz-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	-moz-text-fill-color: transparent;
+	-moz-text-fill-color: transparent; */
+    color: #fff;
 `;
 const InfoButton = styled.button`
     font-size: 1.8rem;
 	align-items: center;
-	background: #59C173; 
+	/* background: #59C173; 
 	background: -webkit-linear-gradient(to left, #5D26C1, #a17fe0, #59C173); 
-	background: linear-gradient(to left, #5D26C1, #a17fe0, #59C173);
-	padding: 15px 60px;
-	border: none;
+	background: linear-gradient(to left, #5D26C1, #a17fe0, #59C173); */
+	padding: 10px 20px;
+	border: 2px solid;
 	border-radius: 4px;
 	margin-bottom: 3px;
 	/* cursor: pointer; */
 	position: relative;
-	transition: all 0.35s;
+	/* transition: all 0.35s; */
+    text-transform: uppercase;
+    letter-spacing: 4px;
 	outline: none;
 	height: 50px;
 	font-size: 20px;
 	text-align: center;
+    transition: all 0.3s ease-in;
+    box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px, rgb(0 0 0 /73%) 0px 16px 10px -10px;
+    background: transparent;
+    color: #a17fe0;
 
     span{
         position: relative;
         z-index: 2;
-        color: #fff;
+        /* color: #fff; */
         text-decoration: none;
         cursor: pointer;
     }
 
-    &:after{
+    /* &:after{
         position: absolute;
         content: '';
         top: 0;
@@ -252,15 +315,19 @@ const InfoButton = styled.button`
         background: #00F260;
         transition: all 0.35s;
         border-radius: 4px;
-    }
+    } */
 
     &:hover{
-        color: #fff;
+        background-color: #5D26C1;
+        color: #a17fe0;
+        box-shadow: rgb(0 0 0 / 80%) 0px 40px 58px -16px, rgb(0 0 0 / 72%) 0px 30px 22px -10px;
+        transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+        transform: scale(1.015);
     }
 
-    &:hover:after{
+    /* &:hover:after{
         width: 100%;
-    }
+    } */
 `;
 const SCButton = styled(InfoButton)`
     background: #38f9d7; 
