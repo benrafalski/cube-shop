@@ -7,26 +7,26 @@ const Categories = () => {
         <Container>
             <Content>
                 <Header>Product Selection</Header>
-                <SpeedCubes>
+                <Selection>
                     <Link to='/products/speedcubes'>
                         <span >3x3 Speedcubes</span>
                     </Link>
-                </SpeedCubes>
-                <WCA>
+                </Selection>
+                <Selection>
                     <Link to='/products/wca-puzzles'>
                         <span >WCA Puzzles</span>
                     </Link>
-                </WCA>
-                <Large>
+                </Selection>
+                <Selection>
                     <Link to='/products/large-puzzles'>
                         <span >8x8+/Megaminx+</span>
                     </Link>
-                </Large>
-                <Cuboid>
+                </Selection>
+                <Selection>
                     <Link to='/products/cuboid'>
                         <span >Cuboids</span>
                     </Link>
-                </Cuboid>
+                </Selection>
             </Content>
         </Container>
     )
@@ -54,10 +54,10 @@ const Content = styled.div`
 	margin-top: 100px;
 	margin-bottom: 100px;
     transition: 0.3s ease-out;
+    box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px, rgb(0 0 0 /73%) 0px 16px 10px -10px;
 
     &:hover {
         transition: 0.3s ease-in;
-        box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px, rgb(0 0 0 /73%) 0px 16px 10px -10px;
     }
 `;
 
@@ -67,27 +67,36 @@ const Header = styled.h1`
 
 const Selection = styled.button`
     font-size: 15px;
-	background: #59C173; 
+	/* background: #59C173; 
 	background: -webkit-linear-gradient(to left, #5D26C1, #a17fe0, #59C173); 
-	background: linear-gradient(to left, #5D26C1, #a17fe0, #59C173);
-	padding: 20px 60px;
+	background: linear-gradient(to left, #5D26C1, #a17fe0, #59C173); */
+	padding: 15px 20px;
 	border: none;
 	border-radius: 4px;
 	margin-top: 2rem;
+    text-align: center;
 	/* cursor: pointer; */
 	position: relative;
 	transition: all 0.35s;
 	outline: none;
+    transition: all 0.3s ease-in;
+    box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px, rgb(0 0 0 /73%) 0px 16px 10px -10px;
+    background: #131313;
+    color: #a17fe0;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    border: 2px solid;
 
     a { 
         position: relative;
         cursor: pointer;
         z-index: 2;
-        color: #fff;
+        /* color: #fff; */
+        color: #a17fe0;
         text-decoration: none;
     }
 
-    &:after{
+    /* &:after{
         position: absolute;
         content: '';
         top: 0;
@@ -97,15 +106,19 @@ const Selection = styled.button`
         background: #00F260;
         transition: all 0.35s;
         border-radius: 4px;
-    }
+    } */
 
     &:hover{
-        color: #fff;
+        background-color: #5D26C1;
+        color: #a17fe0;
+        box-shadow: rgb(0 0 0 / 80%) 0px 40px 58px -16px, rgb(0 0 0 / 72%) 0px 30px 22px -10px;
+        transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+        transform: scale(1.015);
     }
 
-    &:hover:after{
+    /* &:hover:after{
         width: 100%;
-    }
+    } */
 `;
 
 const SpeedCubes = styled(Selection)`
