@@ -11,6 +11,11 @@ import Products from './components/Products';
 import Categories from './components/Categories';
 import ViewItem from './components/ViewItem';
 import Cart from './components/Cart';
+import Checkout from './components/Checkout';
+import { loadStripe } from '@stripe/stripe-js'
+import { Elements } from '@stripe/react-stripe-js'
+
+const promise = loadStripe('pk_test_51JIbRbCeYChu5FtFxmKzrGPN37zOOG1SxSyniY1TuMH9aDD8MaOPKfNpzhaK4JWdUxD4W3QdJVJ5nl0AeeClzYCa00vGOmvQsl')
 
 function App() {
 
@@ -39,6 +44,13 @@ function App() {
     <Router>
       <div className="app">
         <Switch>
+          <Route path='/checkout'>
+            <Navbar setCurrentUser={setCurrentUser} />
+            <Elements stripe={promise}>
+              <Checkout/>
+            </Elements>
+            <Footer/>
+          </Route>
           <Route path='/cart'>
             <Navbar setCurrentUser={setCurrentUser} />
             <Cart setItem={setItem}/>
