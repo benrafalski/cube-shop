@@ -72,6 +72,7 @@ const Product = styled.div`
 	transition: 0.3s ease-in;
 	color: #fff;
 	background: linear-gradient(to left, #131313, #111111);
+    /* box-shadow: rgb(0 0 0 / 9%) 0px 26px 30px -10px, rgb(0 0 0 /3%) -15px 10px 0px 0px; */
 
     &:hover{
         transform: scale(1.015);
@@ -111,34 +112,38 @@ const Info = styled.div`
     width: 100%;
     height: 100px;
     margin-top: 30px;
-	background: #da22ff; 
+    color: white;
+	/* background: #da22ff; 
 	background: -webkit-linear-gradient(to right, #9114ff, #da22ff); 
 	background: linear-gradient(to right, #8f0eff, #da22ff);
 	background-size: 100%;
 	-webkit-background-clip: text;
 	-moz-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	-moz-text-fill-color: transparent;
+	-moz-text-fill-color: transparent; */
 `;
 const Title = styled.p`
+    color: #fff;
     &:hover{
-        background: #9114ff; 
+        /* background: #9114ff; 
         background: -webkit-linear-gradient(to left, #9114ff, #da22ff); 
         background: linear-gradient(to left, #8f0eff, #da22ff);
         background-size: 100%;
         -webkit-background-clip: text;
         -moz-background-clip: text;
         -webkit-text-fill-color: transparent;
-        -moz-text-fill-color: transparent;
+        -moz-text-fill-color: transparent; */
+        color: gray;
     }
 `;
 const Price = styled.p`
+    letter-spacing: 2px;
     text-align:center;
     margin-top: 5px;
 `;
 const Rating = styled.div`
     display: flex;
-    color: #da22ff;;
+    color: #fff;
 	display: flex;
 	justify-content: center;
 `;

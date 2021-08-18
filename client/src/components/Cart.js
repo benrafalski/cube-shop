@@ -82,6 +82,7 @@ const Container = styled.div`
 	background-color: #131313;
 	height: max-content;
 	min-height: 500px;
+    padding-bottom: 200px;
 `;
 const Items = styled.div`
     width: 100%;
@@ -97,10 +98,12 @@ const ShoppingCart = styled.h1`
 	-moz-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	-moz-text-fill-color: transparent;
+    letter-spacing: 3px;
 	margin-right: 10px;
 	padding: 10px;
 	padding-bottom: 20px;
 	border-bottom: 1px solid lightgray;
+    color: white;
 `;
 const Empty = styled.p`
     color: #fff;
@@ -114,12 +117,16 @@ const Subtotal = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	text-align: center;
-	width: 200px;
-    height: 200px;
+    font-size: 18px;
+	width: 250px;
+    height: 250px;
     padding: 20px;
     background-color: #131313;
     border: 1px solid lightgray;
     border-radius: 3px;
+    letter-spacing: 2px;
+    box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px, rgb(0 0 0 /73%) 0px 16px 10px -10px;
+
 `;
 const Amount = styled.p`
     background: #11998e;  /* fallback for old browsers */
@@ -134,6 +141,7 @@ const Amount = styled.p`
 
 const SubCurrency = styled.p`
     margin-top: 2px;
+    font-weight: bold;
 `;
 
 const EmptyCart = styled.small`
@@ -149,6 +157,8 @@ const EmptyCart = styled.small`
 	-moz-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	-moz-text-fill-color: transparent;
+    letter-spacing: 2px;
+
 
     &:hover {
         background: #0f857b;  /* fallback for old browsers */
@@ -176,15 +186,21 @@ const SubtotalButton = styled.button`
 	position: relative;
 	transition: all 0.35s;
 	outline: none;
+    box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px, rgb(0 0 0 /73%) 0px 16px 10px -10px;
+    background: #131313;
+    color: #a17fe0;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    border: 2px solid;
 
     a{
         position: relative;
         z-index: 2;
-        color: #fff;
+        color: #a17fe0;
         text-decoration: none;
     }
 
-    &:after{
+    /* &:after{
         position: absolute;
         content: '';
         top: 0;
@@ -194,15 +210,19 @@ const SubtotalButton = styled.button`
         background: #00F260;
         transition: all 0.35s;
         border-radius: 4px;
-    }
+    } */
 
     &:hover{
-        color: #fff;
+        background-color: #5D26C1;
+        color: #a17fe0;
+        box-shadow: rgb(0 0 0 / 80%) 0px 40px 58px -16px, rgb(0 0 0 / 72%) 0px 30px 22px -10px;
+        transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+        transform: scale(1.015);
     }
 
-    :hover:after{
+    /* :hover:after{
         width: 100%;
-    }
+    } */
 
 
 `;
