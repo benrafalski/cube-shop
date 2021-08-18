@@ -179,6 +179,8 @@ const MainButton = styled.button`
 	position: relative;
 	transition: all 0.35s;
 	outline: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 
     a{
         position: relative;
