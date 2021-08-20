@@ -20,6 +20,41 @@ const Checkout = ({ setItem }) => {
     const stripe = useStripe()
     const elements = useElements()
 
+    const countries = [
+        'Argentina', 
+        'Australia', 
+        'Austria', 
+        'Belgium', 
+        'Canada', 
+        'China',
+        'Denmark',
+        'Finland',
+        'France',
+        'Germany',
+        'Greece',
+        'Hungary',
+        'Italy',
+        'Japan',
+        'Luxembourg',
+        'Netherlands',
+        'New Zealand',
+        'Norway',
+        'Poland',
+        'Portugal',
+        'Russia',
+        'Singapore',
+        'Spain',
+        'Sweden',
+        'Taiwan',
+        'Thailand',
+        'United Kingdom (UK)',
+        'United States (US)',
+        'Vietman'
+    ]
+
+    
+
+
     //console.log({ email: (user ? user.email : 'Guest-Purchase'), amount: getCartTotal(cart) ,cart: cart ,created: 'gg' ,clientSecret: clientSecret})
     const addOrder = async ( paymentCreated ) => {
         const res = await axios.post('/orders', { 
@@ -101,12 +136,24 @@ const Checkout = ({ setItem }) => {
                 </h1>
                 <Section>
                     <Title>
-                        <h3>Delivery Address</h3>
+                        <h3>Billing Address</h3>
                     </Title>
                     <Address>
                         <p>{user?.email}</p>
-                        <p>123 react lane</p>
-                        <p>Los Angeles, CA</p>
+                        <form>
+                            <select>
+                                <option selected disabled>Select Country</option>
+                                {countries.map(country => (
+                                    <option>{country}</option>
+                                ))}
+                            </select>
+                            <input type='text' placeholder='Street Address' data-lpignore='true'/>
+                            <input type='text' placeholder='Apt Number' data-lpignore='true'/>
+                            <input type='text' placeholder='City' data-lpignore='true' />
+                            <input type='text' placeholder='State/County' data-lpignore='true'/>
+                            <input type='text' placeholder='Zipcode' data-lpignore='true'/>
+                            <input type='text' placeholder='Phone Number' data-lpignore='true'/>
+                        </form>
                     </Address>
                 </Section>
                 <Section>
@@ -192,6 +239,14 @@ const Title = styled.div`
 
 const Address = styled.div`
     flex: 0.8;
+
+    form {
+        width: 50%;
+    }
+
+    form > input {
+        width: 100%;
+    }
 `;
 
 const Items = styled.div`
