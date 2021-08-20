@@ -66,7 +66,7 @@ app.post('/users', (req, res) => {
 app.post('/payments/create', async (req, res) => {
     const total = req.body.total
     console.log('Payment Request Recieved', total)
-    
+
     if(total){
         try {
             const paymentIntent = await stripe.paymentIntents.create({
