@@ -5,7 +5,7 @@ import ClearIcon from '@material-ui/icons/Clear';
 import { useStateValue } from '../StateProvider';
 import styled from 'styled-components'
 
-const CartProduct = ({ id, title, price, rating, image, category, setItem, type, magnets, size, weight, released, description }) => {
+const CartProduct = ({ id, title, price, rating, image, category, setItem, type, magnets, size, weight, released, description, component }) => {
     const [{ cart }, dispatch] = useStateValue()
 
     const removeFromCart = () => {
@@ -17,38 +17,49 @@ const CartProduct = ({ id, title, price, rating, image, category, setItem, type,
 
     return (
         <Product>
-            <Delete onClick={removeFromCart}/>
-            <img src={image}/>
+            {component === 'cart' && <Delete onClick={removeFromCart}/>}
+            {component !== 'cart' ? 
+                <img style={{ width:'4%' }} src={image}/> :
+                <img src={image}/>
+            }
             <Info>
-                <Link to='/products/item' style={{ textDecoration:'none' }}>
-                    <Title
-                        onClick={e => setItem({
-                            id: id, 
-                            title: title, 
-                            price: price, 
-                            rating: rating, 
-                            image: image, 
-                            category: category, 
-                            type: type, 
-                            magnets: magnets, 
-                            size: size, 
-                            weight: weight, 
-                            released: released, 
-                            description: description
-                        })}
-                    >{title}</Title>
-                </Link>
+                {
+                    component === 'cart'
+                        ?  
+                            <Link to='/products/item' style={{ textDecoration:'none' }}>
+                                <Title
+                                    onClick={e => setItem({
+                                        id: id, 
+                                        title: title, 
+                                        price: price, 
+                                        rating: rating, 
+                                        image: image, 
+                                        category: category, 
+                                        type: type, 
+                                        magnets: magnets, 
+                                        size: size, 
+                                        weight: weight, 
+                                        released: released, 
+                                        description: description
+                                    })}
+                                >{title}</Title>
+                            </Link>
+                        : 
+                            <p style={{ color:'#fff' }}>{title}</p>
+                }
                 <Price>
                     <small>$</small>
                     <strong>{price}</strong>
                 </Price>
-                <Rating>
-                    {Array(rating)
-                        .fill()
-                        .map((_, i) => (
-                        <StarTwoToneIcon/>
-                    ))}
-                </Rating>
+                {component === 'cart' &&
+                    <Rating>
+                        {Array(rating)
+                            .fill()
+                            .map((_, i) => (
+                            <StarTwoToneIcon/>
+                        ))}
+                    </Rating>
+                }
             </Info>
         </Product>
     )
@@ -124,6 +135,7 @@ const Info = styled.div`
 `;
 const Title = styled.p`
     color: #fff;
+
     &:hover{
         /* background: #9114ff; 
         background: -webkit-linear-gradient(to left, #9114ff, #da22ff); 

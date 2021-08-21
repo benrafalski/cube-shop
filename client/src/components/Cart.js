@@ -40,6 +40,7 @@ const Cart = ({ setItem }) => {
                                     weight={item.weight}
                                     released={item.released}
                                     description={item.description}
+                                    component={'cart'}
                                 />
                             ))))
                             : <p className='cart__empty--text'>Cart is Empty</p>

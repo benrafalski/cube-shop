@@ -128,12 +128,14 @@ const Checkout = ({ setItem }) => {
     return (
         <Payment>
             <Container>
-                <h1>
-                    Checkout ({cart?.length} items) - 
-                    <Link to='/cart' style={{ textDecoration:'none', color: '#000000' }}>
-                        &#160;Back to Cart
-                    </Link>
-                </h1>
+                <Top>
+                    <h1>
+                        Checkout ({cart?.length} items)<br/>
+                        <Link to='/cart' style={{  }}>
+                        Back to Cart
+                        </Link>
+                    </h1>
+                </Top>
                 <Section>
                     <Title>
                         <h3>Billing Address</h3>
@@ -141,17 +143,20 @@ const Checkout = ({ setItem }) => {
                     <Address>
                         <p>{user?.email}</p>
                         <form>
+                            <h5>Country</h5>
                             <select>
                                 <option selected disabled>Select Country</option>
                                 {countries.map(country => (
                                     <option>{country}</option>
                                 ))}
                             </select>
+                            <h5>Address</h5>
                             <input type='text' placeholder='Street Address' data-lpignore='true'/>
                             <input type='text' placeholder='Apt Number' data-lpignore='true'/>
                             <input type='text' placeholder='City' data-lpignore='true' />
                             <input type='text' placeholder='State/County' data-lpignore='true'/>
                             <input type='text' placeholder='Zipcode' data-lpignore='true'/>
+                            <h5>Contact Info</h5>
                             <input type='text' placeholder='Phone Number' data-lpignore='true'/>
                         </form>
                     </Address>
@@ -160,24 +165,23 @@ const Checkout = ({ setItem }) => {
                     <Title>
                         <h3>Review Items and Delivery</h3> 
                     </Title>
-                    <Items>
-                        {cart.length > 0 ? (cart?.map((item) => (
-                            <CartProduct
-                                setItem={setItem}
-                                id={item.id}
-                                title={item.title}
-                                price={item.price}
-                                rating={item.rating}
-                                image={item.image}
-                                category={item.category}
-                                type={item.type}
-                                magnets={item.magnets}
-                                size={item.size}
-                                weight={item.weight}
-                                released={item.released}
-                                description={item.description}
-                            />
-                        ))) : <p>No Items In Cart</p>}
+                    <Items> 
+                        {cart.length > 0 ? ( 
+                            <>
+                                <Products>
+                                    <h7>Products</h7>
+                                    {cart.map((product => (
+                                        <p><img src={product.image}/>{product.title}</p>
+                                    )))}
+                                </Products>
+                                <Prices>
+                                    <h7>Prices</h7>
+                                    {cart.map((product => (
+                                        <p>${product.price}</p>
+                                    )))}
+                                </Prices>
+                            </>
+                        ) : <p>No Items In Cart</p>}
                     </Items>
                 </Section>
                 <Section>
@@ -212,22 +216,58 @@ const Checkout = ({ setItem }) => {
 }
 
 const Payment = styled.div`
-    background-color: #fff;
+    background: linear-gradient(to right, #161616, #000000);
 `;
 
 const Container = styled.div`
+    background: linear-gradient(to left, #131313, #161616);
+
     h1{
         text-align: center;
-        color: #000000;
+        color: #fff;
         padding: 10px;
         font-weight: 400;
-        background-color: #eaeded;
+        background: linear-gradient(to right, #161616, #000000);
         border-bottom: 1px solid #d3d3d3;
+    }
+`;
+
+const Top = styled.div`
+    a {
+        border: 2px solid;
+        font-size: 18px;
+        outline: none;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        width: 400px;
+        margin: auto;
+        margin-top: 20px;
+        padding: 10px 20px;
+        color: #fff;
+        transition: all 0.3s ease-in;
+        box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px, rgb(0 0 0 /73%) 0px 16px 10px -10px;
+        background: #131313;
+        color: #a17fe0;
+        margin-bottom: 30px;
+
+        &:hover {
+            background-color: #5D26C1;
+            color: #a17fe0;
+            box-shadow: rgb(0 0 0 / 80%) 0px 40px 58px -16px, rgb(0 0 0 / 72%) 0px 30px 22px -10px;
+            transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+            transform: scale(1.015);
+        }
     }
 `;
 
 const Section = styled.div`
     display: flex;
+    flex-direction: column;
     padding: 20px;
     margin: 0 20px;
     border-bottom: 1px solid #d3d3d3;
@@ -235,46 +275,146 @@ const Section = styled.div`
 
 const Title = styled.div`
     flex: 0.2;
+    color: #fff;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid lightgray;
+    
 `;
 
 const Address = styled.div`
     flex: 0.8;
 
     form {
-        width: 50%;
+        width: 500px;
+
+        @media screen and (max-width: 600px){
+            width: 450px;
+        }
     }
 
-    form > input {
+    form > h5 {
+        margin-bottom: 5px;
+        /* text-align: center; */
+        background: #da22ff;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #9114ff, #da22ff);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #8f0eff, #da22ff);
+        background-size: 100%;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+    }
+
+    form > input, select {
         width: 100%;
+        height: 30px;
+        margin-bottom: 5px;
+        border-radius: 3px;
+        border-style: solid;
+        background-color: #111111;
+        width: 98%;
+        color: #fff;
     }
 `;
 
 const Items = styled.div`
     flex: 0.8;
+    color: #fff;
+    display: flex
 `;
 
 const Details = styled.div`
     flex: 0.8;
+    color: #fff;
 
     form {
         max-width: 400px;
+        color: #fff;
+    }
+
+    form > h3 {
+        margin-top: 400px;
     }
 
     h4 {
+        margin-top: 10px;
         padding-bottom: 20px;
+    }
+
+`;
+
+const Products = styled.div`
+    border: 1px solid #fff;
+    border-radius: 4px 0px 0px 4px;
+    text-align: center;
+
+    img {
+        width: 25px;
+        height: 25px;
+    }
+
+    h7{
+        border-bottom: 1px solid #fff;
+    }
+
+    p {
+        width: 100%;
+        height: 30px;
+    }
+
+`;
+const Prices = styled.div`
+    border: 1px solid #fff;
+    border-radius: 0px 4px 4px 0px;
+    text-align: center;
+
+    h7{
+        border-bottom: 1px solid #fff;
+        margin-bottom: 12px;
+    }
+
+    p {
+        width: 100%;
+        height: 30px;
+        
     }
 `;
 
 const PriceContainer = styled.div`
     button {
-        background: #f0c14b;
-        border-radius: 1px solid;
         width: 100%;
         height: 30px;
-        border: 1px solid;
+        border: 2px solid;
+        font-size: 18px;
+        outline: none;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        margin: auto;
         margin-top: 10px;
-        border-color: #a88734 #9c7e31 #846a29;
-        color: #111;
+        padding: 10px 20px;
+        color: #fff;
+        transition: all 0.3s ease-in;
+        box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px, rgb(0 0 0 /73%) 0px 16px 10px -10px;
+        background: #131313;
+        color: #a17fe0;
+
+        &:hover {
+            background-color: #5D26C1;
+            color: #a17fe0;
+            box-shadow: rgb(0 0 0 / 80%) 0px 40px 58px -16px, rgb(0 0 0 / 72%) 0px 30px 22px -10px;
+            transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+            transform: scale(1.015);
+        }
+    }
+
+    form > div > div > span > span > div > div > span {
+        color: #fff;
     }
 `;
 
